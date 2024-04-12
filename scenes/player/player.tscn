@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://bdmagbg845cp5"]
+[gd_scene load_steps=2 format=3 uid="uid://bdmagbg845cp5"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_2p3cu"]
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_2p3cu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
