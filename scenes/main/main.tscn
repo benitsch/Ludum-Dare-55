@@ -27,7 +27,20 @@ position = Vector2(966, 740)
 position = Vector2(750, 462)
 
 [node name="Stone" parent="." instance=ExtResource("4_txpgd")]
-position = Vector2(784, 72)
+position = Vector2(851, 240)
+collision_layer = 1
+collision_mask = 1
+
+[node name="Stone2" parent="." instance=ExtResource("4_txpgd")]
+position = Vector2(771, 286)
+collision_layer = 1
+collision_mask = 1
+
+[node name="Stone3" parent="." instance=ExtResource("4_txpgd")]
+position = Vector2(977, 252)
+collision_layer = 1
+collision_mask = 1
 
 [node name="Friend" parent="." instance=ExtResource("5_w7mi1")]
 position = Vector2(194, 302)
+collision_mask = 1

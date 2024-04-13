@@ -11,7 +11,7 @@ func _ready():
 	exit_button.button_down.connect(on_exit_pressed)
 
 func on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/player/player.tscn")
+	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
 
 func on_credits_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/ui/credits/credits.tscn")

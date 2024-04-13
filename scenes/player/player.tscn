@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdmagbg845cp5"]
+[gd_scene load_steps=5 format=3 uid="uid://bdmagbg845cp5"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_2p3cu"]
 [ext_resource type="Texture2D" uid="uid://i1ov7omskph6" path="res://assets/sprites/Circle.png" id="2_67ubt"]
+[ext_resource type="PackedScene" uid="uid://dq3lyfktnc81m" path="res://scenes/player/weapon.tscn" id="3_16xqx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_if4v4"]
 radius = 49.0102
@@ -10,7 +11,7 @@ radius = 49.0102
 script = ExtResource("1_2p3cu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0, 1, 1, 1)
+modulate = Color(0.380392, 0.286275, 0, 1)
 scale = Vector2(0.212, 0.212)
 texture = ExtResource("2_67ubt")
 
@@ -18,3 +19,7 @@ texture = ExtResource("2_67ubt")
 shape = SubResource("CircleShape2D_if4v4")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Weapon" parent="." instance=ExtResource("3_16xqx")]
+
+[connection signal="shoot" from="." to="Weapon" method="_on_player_shoot"]
