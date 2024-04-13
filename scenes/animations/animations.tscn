@@ -8,9 +8,6 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_e23qi")
-}, {
-"duration": 1.0,
 "texture": ExtResource("2_bmpt0")
 }, {
 "duration": 1.0,
@@ -18,6 +15,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_bmpt0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_e23qi")
 }],
 "loop": true,
 "name": &"player_walk",
@@ -27,6 +27,8 @@ animations = [{
 [node name="Animations" type="Node2D"]
 
 [node name="PlayerWalkAnim" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -4)
+position = Vector2(362, 278)
 sprite_frames = SubResource("SpriteFrames_tb4t8")
 animation = &"player_walk"
+autoplay = "player_walk"
+frame_progress = 0.651874
