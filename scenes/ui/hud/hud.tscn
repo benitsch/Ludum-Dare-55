@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://5ohp2aqmlc48"]
+[gd_scene load_steps=10 format=3 uid="uid://5ohp2aqmlc48"]
 
 [ext_resource type="Script" path="res://scenes/ui/hud/hud.gd" id="1_q1w33"]
 [ext_resource type="Texture2D" uid="uid://bcnht4j83lfh4" path="res://assets/sprites/ui/Souls.png" id="2_tgwcs"]
@@ -20,13 +20,6 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ew5yh"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yynjt"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
@@ -34,56 +27,35 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 script = ExtResource("1_q1w33")
 
 [node name="SoulsInfoBox" type="Panel" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -143.0
-offset_top = 211.0
-offset_right = 203.0
-offset_bottom = 273.0
-grow_horizontal = 2
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -185.0
+offset_top = 14.0
+offset_right = -15.0
+offset_bottom = 183.0
+grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_pg668")
 metadata/_edit_group_ = true
 
-[node name="AvatarFrame" type="Panel" parent="SoulsInfoBox"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 12.0
-offset_top = -22.0
-offset_right = 63.0
-offset_bottom = 22.0
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ew5yh")
-
-[node name="TextureRect" type="TextureRect" parent="SoulsInfoBox/AvatarFrame"]
+[node name="TextureRect" type="TextureRect" parent="SoulsInfoBox"]
 layout_mode = 0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 47.0
-offset_bottom = 42.0
+offset_left = 17.0
+offset_top = 14.0
+offset_right = 153.0
+offset_bottom = 169.0
 texture = ExtResource("2_tgwcs")
-expand_mode = 1
-
-[node name="SoulsLabel2" type="Label" parent="SoulsInfoBox"]
-layout_mode = 0
-offset_left = 74.0
-offset_top = 15.0
-offset_right = 147.0
-offset_bottom = 49.0
-theme_override_font_sizes/font_size = 24
-text = "Souls x"
 
 [node name="SoulsLabel" type="Label" parent="SoulsInfoBox"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 160.0
-offset_top = 16.0
-offset_right = 233.0
-offset_bottom = 50.0
-theme_override_font_sizes/font_size = 24
+offset_left = 8.0
+offset_top = 98.0
+offset_right = 159.0
+offset_bottom = 143.0
+theme_override_font_sizes/font_size = 32
 text = "0"
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 offset_right = 750.0
