@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn654oondytk5"]
+
+[ext_resource type="PackedScene" uid="uid://d4lt0b8vnqsgo" path="res://scenes/mob/mob.tscn" id="1_j0jum"]
+[ext_resource type="Script" path="res://scenes/mob/friends/friend.gd" id="2_7d5k2"]
+
+[node name="Friend" instance=ExtResource("1_j0jum")]
+script = ExtResource("2_7d5k2")
+
+[node name="Sprite2D" parent="." index="0"]
+modulate = Color(1, 1, 0.121569, 1)

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwqpakwaa7jsf"]
+
+[ext_resource type="Script" path="res://scenes/mob/enemies/enemy.gd" id="1_hiljj"]
+[ext_resource type="PackedScene" uid="uid://d4lt0b8vnqsgo" path="res://scenes/mob/mob.tscn" id="1_lcidh"]
+
+[node name="Enemy" instance=ExtResource("1_lcidh")]
+script = ExtResource("1_hiljj")
+
+[node name="Sprite2D" parent="." index="0"]
+modulate = Color(1, 0, 0, 1)

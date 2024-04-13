@@ -1,11 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cs7mgthnbva1p"]
+[gd_scene load_steps=6 format=3 uid="uid://cs7mgthnbva1p"]
 
 [ext_resource type="PackedScene" uid="uid://bdmagbg845cp5" path="res://scenes/player/player.tscn" id="1_fwwm0"]
+[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_t21ss"]
 [ext_resource type="PackedScene" uid="uid://qvk7xis33wwj" path="res://scenes/environment/tree.tscn" id="2_jtdep"]
-[ext_resource type="PackedScene" uid="uid://bssvxlbxuux7k" path="res://scenes/enemies/enemy.tscn" id="3_n23fd"]
+[ext_resource type="PackedScene" uid="uid://yqr883qosq3l" path="res://scenes/mob/enemies/stone.tscn" id="4_txpgd"]
+[ext_resource type="PackedScene" uid="uid://bn654oondytk5" path="res://scenes/mob/friends/friend.tscn" id="5_w7mi1"]
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_t21ss")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -17,11 +20,14 @@ offset_right = 1931.0
 offset_bottom = 1099.0
 
 [node name="Player" parent="." instance=ExtResource("1_fwwm0")]
+unique_name_in_owner = true
 position = Vector2(966, 740)
 
 [node name="Tree" parent="." instance=ExtResource("2_jtdep")]
 position = Vector2(750, 462)
 
-[node name="Enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_n23fd")]
-position = Vector2(326, 274)
-player = NodePath("../Player")
+[node name="Stone" parent="." instance=ExtResource("4_txpgd")]
+position = Vector2(784, 72)
+
+[node name="Friend" parent="." instance=ExtResource("5_w7mi1")]
+position = Vector2(194, 302)

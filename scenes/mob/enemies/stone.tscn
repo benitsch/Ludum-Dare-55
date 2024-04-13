@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://yqr883qosq3l"]
+
+[ext_resource type="PackedScene" uid="uid://dwqpakwaa7jsf" path="res://scenes/mob/enemies/enemy.tscn" id="1_70vm5"]
+[ext_resource type="Script" path="res://scenes/mob/enemies/stone.gd" id="2_wxkax"]
+
+[node name="Stone" instance=ExtResource("1_70vm5")]
+position = Vector2(2, 1)
+script = ExtResource("2_wxkax")
