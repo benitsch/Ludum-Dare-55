@@ -89,3 +89,4 @@ aspect_right={
 2d_physics/layer_2="Mob"
 2d_physics/layer_3="Player Bullet"
 2d_physics/layer_4="Tree"
+2d_physics/layer_5="Friend"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dnnh7m8d5lypy"]
+[gd_scene load_steps=5 format=3 uid="uid://vnl14knqtjo"]
 
 [ext_resource type="Texture2D" uid="uid://i1ov7omskph6" path="res://assets/sprites/Circle.png" id="1_1wlo6"]
 [ext_resource type="PackedScene" uid="uid://bn654oondytk5" path="res://scenes/mob/friends/friend.tscn" id="1_x46wl"]
@@ -8,13 +8,11 @@
 radius = 19.0263
 
 [node name="FriendlyStone" instance=ExtResource("1_x46wl")]
-collision_mask = 3
 script = ExtResource("2_yumcw")
 health = null
 damage = null
 speed = null
 attack_speed = 5.5
-holding_distance = 200.0
 
 [node name="Sprite2D" parent="." index="0"]
 rotation = 0.0
