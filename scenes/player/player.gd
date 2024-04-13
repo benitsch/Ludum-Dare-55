@@ -1,8 +1,12 @@
 extends CharacterBody2D
 
 @export var speed: int = 400
+@export var health: int = 200
+
+var is_alive: bool = true
 
 signal shoot
+signal player_dead
 
 func _physics_process(_delta):
 	get_input()
@@ -20,3 +24,11 @@ func get_input():
 		shoot.emit()
 		
 	
+func receive_damage(dmg):
+	print("player call func receive_damage")
+	health -= dmg
+	if health <= 0:
+		is_alive = false
+		print("player dead")
+		player_dead.emit()
+		# TODO show game over screen and freeze/end game
