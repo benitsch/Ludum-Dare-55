@@ -1,31 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://dq3lyfktnc81m"]
+[gd_scene load_steps=2 format=3 uid="uid://dq3lyfktnc81m"]
 
-[ext_resource type="Texture2D" uid="uid://dkfr4s5cgpjxp" path="res://assets/sprites/Square.png" id="1_8smob"]
 [ext_resource type="Script" path="res://scenes/player/weapon.gd" id="1_w0xtn"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kg070"]
-radius = 148.003
-
-[node name="Weapon" type="Area2D"]
-collision_layer = 0
-collision_mask = 2
+[node name="Weapon" type="Node2D"]
 script = ExtResource("1_w0xtn")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_kg070")
 
 [node name="WeaponPivot" type="Marker2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="WeaponPivot"]
-modulate = Color(1, 0.160784, 1, 1)
-position = Vector2(61, 0)
-scale = Vector2(0.024, 0.008)
-texture = ExtResource("1_8smob")
-
-[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Sprite2D"]
+[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot"]
 unique_name_in_owner = true
-position = Vector2(250, 0)
+position = Vector2(67, 0)
+scale = Vector2(0.024, 0.008)
 
-[node name="Timer" type="Timer" parent="WeaponPivot/Sprite2D"]
+[node name="Timer" type="Timer" parent="WeaponPivot"]
+unique_name_in_owner = true
 
-[connection signal="timeout" from="WeaponPivot/Sprite2D/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="WeaponPivot/Timer" to="." method="_on_timer_timeout"]

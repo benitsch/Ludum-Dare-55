@@ -7,7 +7,6 @@ var health_bar = null
 var is_alive: bool = true
 
 signal shoot
-signal player_dead
 
 func _ready():
 	health_bar = %HealthBar
@@ -47,5 +46,4 @@ func receive_damage(dmg):
 	if health <= 0:
 		is_alive = false
 		print("player dead")
-		player_dead.emit()
 		get_tree().change_scene_to_file("res://scenes/ui/game_over/game_over.tscn")

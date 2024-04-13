@@ -32,8 +32,5 @@ position = Vector2(1609, 180)
 
 [node name="Friend" parent="." instance=ExtResource("5_w7mi1")]
 position = Vector2(194, 302)
-personal_space = 400
-max_health = 150
-regeneration = 0
 
 [node name="Hud" parent="." instance=ExtResource("6_xvdfk")]

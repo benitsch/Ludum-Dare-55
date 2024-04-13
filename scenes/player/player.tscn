@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdmagbg845cp5"]
+[gd_scene load_steps=14 format=3 uid="uid://bdmagbg845cp5"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_2p3cu"]
 [ext_resource type="Texture2D" uid="uid://i1ov7omskph6" path="res://assets/sprites/Circle.png" id="2_67ubt"]
-[ext_resource type="PackedScene" path="res://scenes/player/weapon.tscn" id="3_16xqx"]
+[ext_resource type="PackedScene" uid="uid://dq3lyfktnc81m" path="res://scenes/player/weapon.tscn" id="3_16xqx"]
 [ext_resource type="PackedScene" path="res://scenes/player/summoning.tscn" id="4_jktg6"]
+[ext_resource type="Texture2D" uid="uid://j264xp1kc24q" path="res://assets/sprites/player/walk/player_walk.png" id="5_vmp8s"]
+[ext_resource type="Texture2D" uid="uid://b5jkqbip7nb78" path="res://assets/sprites/player/Idle/idle.png" id="6_wme7c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_if4v4"]
 radius = 49.0102
@@ -19,17 +21,60 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kg8j2"]
-bg_color = Color(0.329412, 0.596078, 0.176471, 1)
+bg_color = Color(0.662745, 0.847059, 0.254902, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="Animation" id="Animation_n4q11"]
+resource_name = "player_idle"
+length = 1.08334
+loop_mode = 1
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_idle_anim:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.416667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_2vaph"]
+resource_name = "walk"
+length = 0.333342
+loop_mode = 1
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player_walk:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.1, 0.1001, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 2, 1, 2, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lwbxh"]
+_data = {
+"player_idle": SubResource("Animation_n4q11"),
+"walk": SubResource("Animation_2vaph")
+}
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 10
 script = ExtResource("1_2p3cu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0.380392, 0.286275, 0, 1)
 scale = Vector2(0.212, 0.212)
 texture = ExtResource("2_67ubt")
@@ -38,6 +83,7 @@ texture = ExtResource("2_67ubt")
 shape = SubResource("CircleShape2D_if4v4")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
 
 [node name="Weapon" parent="." instance=ExtResource("3_16xqx")]
 
@@ -59,13 +105,30 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -89.0
-offset_top = -91.5
+offset_top = -212.5
 offset_right = 89.0
-offset_bottom = -64.5
+offset_bottom = -185.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_jofnb")
 theme_override_styles/fill = SubResource("StyleBoxFlat_kg8j2")
 show_percentage = false
+
+[node name="player_walk" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("5_vmp8s")
+hframes = 3
+frame = 2
+
+[node name="player_idle_anim" type="Sprite2D" parent="."]
+texture = ExtResource("6_wme7c")
+hframes = 2
+frame = 1
+
+[node name="player_animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lwbxh")
+}
+autoplay = "player_idle"
 
 [connection signal="shoot" from="." to="Weapon" method="_on_player_shoot"]
