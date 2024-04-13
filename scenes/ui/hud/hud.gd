@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 var souls_value = 0
 var health = 25;
