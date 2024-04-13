@@ -2,11 +2,18 @@ extends CharacterBody2D
 
 @export var speed: int = 400
 @export var health: int = 200
+var health_bar = null
 
 var is_alive: bool = true
 
 signal shoot
 signal player_dead
+
+func _ready():
+	health_bar = %HealthBar
+	health_bar.max_value = health
+	health_bar.value = health
+	
 
 func _physics_process(delta):
 	get_input()
@@ -36,6 +43,7 @@ func check_hitbox(delta):
 func receive_damage(dmg):
 	print("player call func receive_damage with dmg:", dmg)
 	health -= dmg
+	health_bar.value = health
 	if health <= 0:
 		is_alive = false
 		print("player dead")

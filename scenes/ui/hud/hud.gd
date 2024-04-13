@@ -6,9 +6,9 @@ var health = 25;
 @onready var health_bar = %HealthBar
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	health_bar.value = health
-	souls_value_text.text = str(souls_value)
+#func _ready():
+	#health_bar.value = health
+	#souls_value_text.text = str(souls_value)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

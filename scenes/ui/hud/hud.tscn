@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://5ohp2aqmlc48"]
+[gd_scene load_steps=11 format=3 uid="uid://5ohp2aqmlc48"]
 
 [ext_resource type="Script" path="res://scenes/ui/hud/hud.gd" id="1_q1w33"]
 [ext_resource type="Texture2D" uid="uid://bcnht4j83lfh4" path="res://assets/sprites/ui/Souls.png" id="2_tgwcs"]
@@ -27,43 +27,11 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yynjt"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_q1w33")
-
-[node name="HealthInfoBox" type="Panel" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -189.5
-offset_right = 189.5
-offset_bottom = 68.0
-grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_pg668")
-
-[node name="HealthLabel" type="Label" parent="HealthInfoBox"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 34.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 24
-text = "Health"
-horizontal_alignment = 1
-
-[node name="HealthBar" type="ProgressBar" parent="HealthInfoBox"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = -33.0
-offset_right = -7.0
-offset_bottom = -6.0
-grow_horizontal = 2
-grow_vertical = 0
-value = 25.0
 
 [node name="SoulsInfoBox" type="Panel" parent="."]
 anchors_preset = 5
@@ -117,20 +85,6 @@ offset_bottom = 50.0
 theme_override_font_sizes/font_size = 24
 text = "0"
 
-[node name="GrantSoulBtn" type="Button" parent="."]
-offset_left = 1138.0
-offset_top = 85.0
-offset_right = 1243.0
-offset_bottom = 130.0
-text = "Grant Soul"
-
-[node name="GrantHealthBtn" type="Button" parent="."]
-offset_left = 1158.0
-offset_top = 12.0
-offset_right = 1263.0
-offset_bottom = 57.0
-text = "Grant Health"
-
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 offset_right = 750.0
 offset_bottom = 347.0
@@ -139,18 +93,20 @@ alignment = 1
 [node name="Panel" type="Panel" parent="."]
 offset_right = 760.0
 offset_bottom = 258.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yynjt")
 
 [node name="SummonBox" parent="Panel" instance=ExtResource("3_lw58o")]
 layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 957.0
-offset_top = 7.0
-offset_right = 957.0
-offset_bottom = 7.0
+offset_left = 971.0
+offset_top = 11.0
+offset_right = 971.0
+offset_bottom = 11.0
 grow_horizontal = 1
 grow_vertical = 1
+summon_label_text = "1"
 friend_texture = ExtResource("4_3wacb")
 
 [node name="SummonBox2" parent="Panel" instance=ExtResource("3_lw58o")]
@@ -158,11 +114,11 @@ layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 1210.0
-offset_top = 7.0
-offset_right = 1210.0
-offset_bottom = 354.0
-summon_label_text = "Summon (2)"
+offset_left = 1166.0
+offset_top = 12.0
+offset_right = 1166.0
+offset_bottom = 359.0
+summon_label_text = "2"
 summon_cost = 6
 friend_texture = ExtResource("5_mj33g")
 
@@ -171,11 +127,11 @@ layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 1463.0
-offset_top = 8.0
-offset_right = 1463.0
-offset_bottom = 355.0
-summon_label_text = "Summon (3)"
+offset_left = 1363.0
+offset_top = 15.0
+offset_right = 1363.0
+offset_bottom = 362.0
+summon_label_text = "3"
 summon_cost = 12
 friend_texture = ExtResource("6_bn5md")
 
@@ -200,6 +156,3 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_aqc77")
-
-[connection signal="pressed" from="GrantSoulBtn" to="." method="_on_grant_soul_pressed"]
-[connection signal="pressed" from="GrantHealthBtn" to="." method="_on_grant_health_btn_pressed"]
