@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdmagbg845cp5"]
+[gd_scene load_steps=6 format=3 uid="uid://bdmagbg845cp5"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_2p3cu"]
 [ext_resource type="Texture2D" uid="uid://i1ov7omskph6" path="res://assets/sprites/Circle.png" id="2_67ubt"]
@@ -7,7 +7,11 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_if4v4"]
 radius = 49.0102
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_gmut2"]
+radius = 58.0086
+
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 10
 script = ExtResource("1_2p3cu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -21,5 +25,13 @@ shape = SubResource("CircleShape2D_if4v4")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Weapon" parent="." instance=ExtResource("3_16xqx")]
+
+[node name="HitBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("CircleShape2D_gmut2")
+debug_color = Color(0.909804, 0.152941, 0.627451, 0.419608)
 
 [connection signal="shoot" from="." to="Weapon" method="_on_player_shoot"]

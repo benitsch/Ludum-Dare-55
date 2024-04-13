@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://d4lt0b8vnqsgo" path="res://scenes/mob/mob.tscn" id="1_lcidh"]
 
 [node name="Enemy" instance=ExtResource("1_lcidh")]
-collision_layer = 2
 script = ExtResource("1_hiljj")
 
 [node name="Sprite2D" parent="." index="0"]

@@ -24,14 +24,10 @@ unique_name_in_owner = true
 position = Vector2(758, 646)
 
 [node name="Tree" parent="." instance=ExtResource("2_jtdep")]
-position = Vector2(750, 462)
+position = Vector2(748, 362)
 
 [node name="Stone" parent="." instance=ExtResource("4_txpgd")]
 position = Vector2(1609, 180)
-collision_layer = 1
-collision_mask = 1
-attack_speed = 0.5
 
 [node name="Friend" parent="." instance=ExtResource("5_w7mi1")]
 position = Vector2(194, 302)
-collision_mask = 1
