@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://w1kcyt72mf44"]
+
+[ext_resource type="Script" path="res://scenes/player/summoning.gd" id="1_bievt"]
+[ext_resource type="Texture2D" uid="uid://i1ov7omskph6" path="res://assets/sprites/Circle.png" id="2_j3k0a"]
+
+[node name="Summoning" type="Node2D"]
+script = ExtResource("1_bievt")
+
+[node name="SummoningPoint" type="Marker2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="SummoningPoint"]
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("2_j3k0a")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

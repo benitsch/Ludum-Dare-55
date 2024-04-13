@@ -1,11 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://bn654oondytk5"]
+[gd_scene load_steps=4 format=3 uid="uid://bn654oondytk5"]
 
 [ext_resource type="PackedScene" uid="uid://d4lt0b8vnqsgo" path="res://scenes/mob/mob.tscn" id="1_j0jum"]
 [ext_resource type="Script" path="res://scenes/mob/friends/friend.gd" id="2_7d5k2"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0qc7m"]
+radius = 450.0
+
 [node name="Friend" instance=ExtResource("1_j0jum")]
-collision_mask = 10
 script = ExtResource("2_7d5k2")
+personal_space = 400
+max_health = 150
+regeneration = 0
 
 [node name="Sprite2D" parent="." index="0"]
 modulate = Color(1, 1, 0.121569, 1)
+
+[node name="Area2D" type="Area2D" parent="." index="2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_0qc7m")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

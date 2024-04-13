@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://51agthesu0tu"]
+
+[ext_resource type="PackedScene" uid="uid://bdmagbg845cp5" path="res://scenes/player/player.tscn" id="1_jqy7h"]
+
+[node name="SummonTest" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_jqy7h")]
+unique_name_in_owner = true
