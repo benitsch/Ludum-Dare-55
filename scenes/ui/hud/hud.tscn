@@ -9,16 +9,16 @@
 [ext_resource type="Texture2D" uid="uid://bcyg5kg2mrh06" path="res://assets/sprites/friends/Helper03.png" id="6_bn5md"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pg668"]
-bg_color = Color(0.756863, 0.462745, 0.243137, 1)
+bg_color = Color(0, 0, 0, 0.392157)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+border_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ew5yh"]
 bg_color = Color(1, 1, 1, 1)
@@ -37,10 +37,10 @@ script = ExtResource("1_q1w33")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -174.0
-offset_top = 74.0
-offset_right = 172.0
-offset_bottom = 136.0
+offset_left = -143.0
+offset_top = 211.0
+offset_right = 203.0
+offset_bottom = 273.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pg668")
 metadata/_edit_group_ = true
