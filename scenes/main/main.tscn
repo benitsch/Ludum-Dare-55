@@ -19,6 +19,7 @@ offset_left = -10.0
 offset_top = -21.0
 offset_right = 1931.0
 offset_bottom = 1099.0
+color = Color(0.760784, 0.784314, 0.592157, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_fwwm0")]
 unique_name_in_owner = true
