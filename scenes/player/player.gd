@@ -53,6 +53,6 @@ func receive_damage(dmg):
 	health_bar.value = health
 	if not is_alive or health <= 0:
 		is_alive = false
-		Autoload.current_wave = 0
+		Autoload.current_wave = 1
 		print("player dead")
 		get_tree().change_scene_to_file("res://scenes/ui/game_over/game_over.tscn")

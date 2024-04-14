@@ -17,7 +17,6 @@ var strongEnemiesList = []
 
 func _ready():
 	player = $".."/Player
-	print("EnemySpawner ready func")
 	$Timer.wait_time = wave_spawn_delay
 	$Timer.start()
 	spawn_wave(Autoload.current_wave, true)
@@ -26,7 +25,6 @@ func _process(_delta):
 	var current_time = $Timer.time_left
 	var current_seconds = int(current_time)
 	if current_seconds != Autoload.wave_timer:
-		print(current_seconds)
 		Autoload.wave_timer = current_seconds
 
 # Funktion zum Spawnen einer Welle von Feinden
@@ -41,26 +39,18 @@ func spawn_wave(waveNumber, defer = false):
 	var weakCount = int((baseWeakCount * (1.0 + randf() * difficultyRandomFactor)) / 2)
 	var mediumCount = int((baseMediumCount * (1.0 + randf() * difficultyRandomFactor)) / 2)
 	var strongCount = int((baseStrongCount * (1.0 + randf() * difficultyRandomFactor)) / 2)
-	
-	#var totalEnemies = weakCount + mediumCount + strongCount
-	
-	#print("totalEnemies:", totalEnemies)
-	#print("weakCount", round(weakCount))
-	#print("mediumCount", round(mediumCount))
-	#print("strongCount", round(strongCount))
+
 	# Feinde spawnen
 	spawnEnemies(weakEnemies, round(weakCount), defer)
 	spawnEnemies(mediumEnemies, round(mediumCount), defer)
 	spawnEnemies(strongEnemies, round(strongCount), defer)
 	
-	Autoload.current_wave += 1
 
 # Funktion zum Spawnen von Feinden
 func spawnEnemies(enemyList, count, defer):
 	for i in range(count):
 		var enemyIndex = randi() % enemyList.size()
 		var enemyType = enemyList[enemyIndex]
-		print(enemyType)
 		spawnEnemy(enemyType, defer)
 
 func spawnEnemy(enemyType, defer):
@@ -81,7 +71,8 @@ func spawnEnemy(enemyType, defer):
 
 
 func _on_timer_timeout():
-	print("on timer timeout spawner")
+	Autoload.current_wave += 1
+	
 	if Autoload.current_wave > 10:
 		$Timer.wait_time = 30
 	elif Autoload.current_wave > 5:
