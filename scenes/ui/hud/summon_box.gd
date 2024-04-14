@@ -22,7 +22,6 @@ func set_color_intensity(intensity): # between 0 and 1
 	friend_image.material.set_shader_parameter("desaturate_strength",intensity)
 
 func _process(delta):
-	print(str(Autoload.souls) + " " + str(summon_cost))
 	if Autoload.souls >= summon_cost:
 		set_color_intensity(1)
 	else:
