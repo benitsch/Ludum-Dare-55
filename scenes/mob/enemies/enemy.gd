@@ -2,6 +2,7 @@ extends "res://scenes/mob/mob.gd"
 
 class_name Enemy
 
+
 func _init():
 	super()
 

@@ -35,6 +35,8 @@ func receive_damage(dmg):
 	health -= dmg
 	if health <= 0:
 		queue_free()
+		if self is Enemy:
+			Autoload.souls += 1
 
 func check_attack_area(delta):
 	var overlapping_enemies = $AttackArea.get_overlapping_bodies()

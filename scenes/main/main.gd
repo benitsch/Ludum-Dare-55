@@ -4,3 +4,7 @@ extends Node2D
 
 func _ready():
 	music.play();
+
+
+func _on_stone_enemy_death():
+	print("stone death signal")

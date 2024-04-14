@@ -1,14 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwqpakwaa7jsf"]
+[gd_scene load_steps=5 format=3 uid="uid://dwqpakwaa7jsf"]
 
 [ext_resource type="Script" path="res://scenes/mob/enemies/enemy.gd" id="1_hiljj"]
 [ext_resource type="PackedScene" uid="uid://d4lt0b8vnqsgo" path="res://scenes/mob/mob.tscn" id="1_lcidh"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5j0po"]
+resource_local_to_scene = true
+radius = 19.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_75kgx"]
+resource_local_to_scene = true
+radius = 26.0
+
 [node name="Enemy" instance=ExtResource("1_lcidh")]
 script = ExtResource("1_hiljj")
 
-[node name="Sprite2D" parent="." index="0"]
-modulate = Color(1, 0, 0, 1)
+[node name="BodyCollider" parent="." index="1"]
+shape = SubResource("CircleShape2D_5j0po")
 
 [node name="AttackArea" parent="." index="3"]
 collision_layer = 2
 collision_mask = 16
+
+[node name="AttackCollider" parent="AttackArea" index="0"]
+shape = SubResource("CircleShape2D_75kgx")
