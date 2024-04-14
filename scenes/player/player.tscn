@@ -100,7 +100,7 @@ shape = SubResource("CircleShape2D_if4v4")
 zoom = Vector2(0.5, 0.5)
 
 [node name="Weapon" parent="." instance=ExtResource("3_16xqx")]
-position = Vector2(118, -187)
+position = Vector2(7, -146)
 
 [node name="HitBox" type="Area2D" parent="."]
 unique_name_in_owner = true
