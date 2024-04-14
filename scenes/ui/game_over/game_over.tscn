@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://raqsemn4g3nf"]
+[gd_scene load_steps=3 format=3 uid="uid://raqsemn4g3nf"]
 
 [ext_resource type="Script" path="res://scenes/ui/game_over/game_over.gd" id="1_0lwbo"]
+[ext_resource type="Texture2D" uid="uid://btipnj733asfk" path="res://assets/sprites/background/OverScreen.png" id="2_g7t6s"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -18,6 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_g7t6s")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -39,6 +41,7 @@ theme_override_constants/separation = 60
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -59,18 +62,19 @@ layout_mode = 2
 theme_override_constants/separation = 64
 alignment = 1
 
+[node name="LabelSoulsStatistic" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.141176, 0.0313726, 0.231373, 1)
+theme_override_font_sizes/font_size = 48
+text = "You managed to collect 0 souls."
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="Seperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-
-[node name="LabelSoulsStatistic" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 48
-text = "You managed to collect 0 souls."
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Seperator5" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
