@@ -29,13 +29,37 @@ func get_input():
 		"move_right",
 		"move_up",
 		"move_down").normalized()
-	if direction:
-		if direction == Vector2.RIGHT:
-			$player_sprite.flip_h = false
-			$AnimationPlayer.play("player_walk")
-		else:
-			$player_sprite.flip_h = true
-			$AnimationPlayer.play("player_walk")
+	print(direction)
+	if direction != Vector2.ZERO:
+		if direction.x == 0:  # Vertikale Bewegung (nach oben oder unten)
+			if direction.y < 0:  # Bewegung nach oben
+				$player_sprite.flip_h = false
+				$AnimationPlayer.play("player_walk_up")
+			#else:  # Bewegung nach unten
+				#$player_sprite.flip_h = false
+				#$AnimationPlayer.play("player_walk_down")
+		elif direction.y == 0:  # Horizontale Bewegung (nach links oder rechts)
+			if direction.x > 0:  # Bewegung nach rechts
+				$player_sprite.flip_h = false
+				$AnimationPlayer.play("player_walk")
+			else:  # Bewegung nach links
+				$player_sprite.flip_h = true
+				$AnimationPlayer.play("player_walk")
+		#else:  # Diagonale Bewegung
+			#if direction.y < 0:  # Bewegung nach oben
+				#if direction.x > 0:  # Bewegung nach rechts
+					#$player_sprite.flip_h = false
+					#$AnimationPlayer.play("player_walk_diagonal_up_right")
+				#else:  # Bewegung nach links
+					#$player_sprite.flip_h = true
+					#$AnimationPlayer.play("player_walk_diagonal_up_left")
+			#else:  # Bewegung nach unten
+				#if direction.x > 0:  # Bewegung nach rechts
+					#$player_sprite.flip_h = false
+					#$AnimationPlayer.play("player_walk_diagonal_down_right")
+				#else:  # Bewegung nach links
+					#$player_sprite.flip_h = true
+					#$AnimationPlayer.play("player_walk_diagonal_down_left")
 		velocity = direction * speed
 	else:
 		velocity = Vector2.ZERO
