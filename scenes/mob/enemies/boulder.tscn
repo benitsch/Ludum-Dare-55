@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cs3e51epdiqn"]
+[gd_scene load_steps=9 format=3 uid="uid://cs3e51epdiqn"]
 
 [ext_resource type="PackedScene" uid="uid://dwqpakwaa7jsf" path="res://scenes/mob/enemies/enemy.tscn" id="1_dff7q"]
 [ext_resource type="Script" path="res://scenes/mob/enemies/boulder.gd" id="2_v57wy"]
 [ext_resource type="Texture2D" uid="uid://txibeupndrj4" path="res://assets/sprites/enemy/Enemy03.png" id="3_3xyj7"]
+[ext_resource type="Texture2D" uid="uid://c5k2aqfgy6q2w" path="res://assets/sprites/enemy/Enemy03_sprite.png" id="4_7kxxi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ilyyq"]
 resource_local_to_scene = true
@@ -12,6 +13,29 @@ radius = 70.0
 resource_local_to_scene = true
 radius = 85.0
 
+[sub_resource type="Animation" id="Animation_7dwvs"]
+resource_name = "enemy_03_walk"
+length = 0.666675
+loop_mode = 1
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("enemy_03_walk:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3l8ic"]
+_data = {
+"enemy_03_walk": SubResource("Animation_7dwvs")
+}
+
 [node name="Boulder" instance=ExtResource("1_dff7q")]
 position = Vector2(2, 1)
 script = ExtResource("2_v57wy")
@@ -19,12 +43,22 @@ script = ExtResource("2_v57wy")
 [node name="BodyCollider" parent="." index="1"]
 shape = SubResource("CircleShape2D_ilyyq")
 
-[node name="AttackSpeedTimer" parent="." index="2"]
-process_mode = 0
-
 [node name="AttackCollider" parent="AttackArea" index="0"]
 shape = SubResource("CircleShape2D_vfkrl")
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="4"]
+[node name="Sprite2D" type="Sprite2D" parent="." index="3"]
+visible = false
 position = Vector2(-5, -92)
 texture = ExtResource("3_3xyj7")
+
+[node name="enemy_03_walk" type="Sprite2D" parent="." index="4"]
+position = Vector2(-7, -108)
+texture = ExtResource("4_7kxxi")
+hframes = 3
+frame = 1
+
+[node name="enemy_03_animation" type="AnimationPlayer" parent="." index="5"]
+libraries = {
+"": SubResource("AnimationLibrary_3l8ic")
+}
+autoplay = "enemy_03_walk"

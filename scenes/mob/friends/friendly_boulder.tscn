@@ -37,8 +37,6 @@ _data = {
 
 [node name="FriendlyStone" instance=ExtResource("1_ww8r0")]
 script = ExtResource("2_xi4k7")
-initial_max_health = 150
-initial_regeneration = 0
 
 [node name="BodyCollider" parent="." index="1"]
 shape = SubResource("CircleShape2D_1tkpo")
@@ -46,12 +44,12 @@ shape = SubResource("CircleShape2D_1tkpo")
 [node name="AttackCollider" parent="AttackArea" index="0"]
 shape = SubResource("CircleShape2D_4hdnk")
 
-[node name="friend_03_walk" type="Sprite2D" parent="." index="5"]
+[node name="friend_03_walk" type="Sprite2D" parent="." index="4"]
 position = Vector2(-5, -123)
 texture = ExtResource("4_pptm2")
 hframes = 3
 
-[node name="friend_03_animation" type="AnimationPlayer" parent="." index="6"]
+[node name="friend_03_animation" type="AnimationPlayer" parent="." index="5"]
 libraries = {
 "": SubResource("AnimationLibrary_3l8ic")
 }
