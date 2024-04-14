@@ -26,5 +26,5 @@ process_mode = 0
 shape = SubResource("CircleShape2D_vfkrl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="4"]
-position = Vector2(-5, -105)
+position = Vector2(-5, -92)
 texture = ExtResource("3_3xyj7")

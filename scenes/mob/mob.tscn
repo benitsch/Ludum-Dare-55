@@ -17,7 +17,8 @@ collision_mask = 15
 script = ExtResource("1_2atju")
 
 [node name="GroundIndicator" type="Sprite2D" parent="."]
-scale = Vector2(0.076, 0.076)
+modulate = Color(0.196078, 0.196078, 0.196078, 0.396078)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_nretx")
 
 [node name="BodyCollider" type="CollisionShape2D" parent="."]

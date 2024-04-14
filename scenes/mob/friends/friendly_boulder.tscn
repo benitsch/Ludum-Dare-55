@@ -14,6 +14,8 @@ radius = 85.0
 
 [node name="FriendlyStone" instance=ExtResource("1_ww8r0")]
 script = ExtResource("2_xi4k7")
+initial_max_health = 150
+initial_regeneration = 0
 
 [node name="BodyCollider" parent="." index="1"]
 shape = SubResource("CircleShape2D_1tkpo")
@@ -22,5 +24,5 @@ shape = SubResource("CircleShape2D_1tkpo")
 shape = SubResource("CircleShape2D_4hdnk")
 
 [node name="Visuals" type="Sprite2D" parent="." index="5"]
-position = Vector2(-5, -120)
+position = Vector2(-6, -99)
 texture = ExtResource("3_v6lpi")
