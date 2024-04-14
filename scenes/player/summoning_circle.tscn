@@ -120,6 +120,7 @@ shape = SubResource("CircleShape2D_3660u")
 
 [node name="MagicCircle" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.117647)
+z_index = -1
 position = Vector2(7, 1)
 texture = ExtResource("5_7gxtn")
 
