@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://c3pned356mea" path="res://assets/sprites/ui/Souls.png" id="2_tgwcs"]
 [ext_resource type="PackedScene" uid="uid://bfm6hxasht1pk" path="res://scenes/ui/hud/summon_box.tscn" id="3_lw58o"]
 [ext_resource type="Texture2D" uid="uid://cabfwytsotmsy" path="res://assets/sprites/friends/Helper01.png" id="4_3wacb"]
-[ext_resource type="Texture2D" uid="uid://7kcyvt3xgqp3" path="res://assets/sprites/ui/SummoningButton.png" id="4_aqc77"]
+[ext_resource type="Texture2D" uid="uid://bviv81xbholqc" path="res://assets/sprites/ui/SummoningButton.png" id="4_aqc77"]
 [ext_resource type="Texture2D" uid="uid://b8a5wl4x2xgj1" path="res://assets/sprites/friends/Helper02.png" id="5_mj33g"]
 [ext_resource type="Texture2D" uid="uid://xyil7ti26doa" path="res://assets/sprites/friends/Helper03.png" id="6_bn5md"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pg668"]
-bg_color = Color(0, 0, 0, 0.392157)
+bg_color = Color(0, 0, 0, 0)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -54,6 +54,7 @@ offset_left = 8.0
 offset_top = 110.0
 offset_right = 159.0
 offset_bottom = 143.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "0"
 horizontal_alignment = 1
