@@ -48,6 +48,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_7dwvs"]
 resource_name = "friend_03_walk"
+step = 0.0833333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
