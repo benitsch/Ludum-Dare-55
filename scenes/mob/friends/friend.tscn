@@ -22,6 +22,9 @@ personal_space = 400
 initial_max_health = 150
 initial_regeneration = 0
 
+[node name="GroundIndicator" parent="." index="0"]
+visible = false
+
 [node name="BodyCollider" parent="." index="1"]
 shape = SubResource("CircleShape2D_b2vg2")
 

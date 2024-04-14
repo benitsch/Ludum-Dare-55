@@ -66,6 +66,8 @@ func _process(_delta):
 		summon_fail()
 
 func summon_addAspect(aspect_index):
+	animator.speed_scale = 0.25
+	animator.seek(0.75)
 	match aspect_values[0]:
 		1:
 			aspect1.frame = aspect_index
@@ -86,11 +88,11 @@ func summon_addAspect(aspect_index):
 			pass
 
 func summon_fail():
+	print("FAIL")
 	summon_failed = true
 	animator.stop()
 	$MagicCircle.visible = false
 	Autoload.is_summoning = false
-	particles.restart()
 	particles.emitting = true
 
 func summon_mob():
