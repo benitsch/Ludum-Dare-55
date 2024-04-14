@@ -1,8 +1,8 @@
 extends Control
 
-@export var summon_label_text = "Summon (1)"
-@export var summon_cost = 3
+@export var summon_label_text = "1"
 @export var friend_texture : Texture
+var summon_cost = 0
 
 @onready var summon_x = %SummonX
 @onready var summon_label = %SummonLabel
@@ -14,8 +14,8 @@ extends Control
 		
 func _ready():
 	summon_label.text = summon_label_text
-	summon_cost_label.text = str(summon_cost)
 	friend_image.texture = friend_texture
+	setSummonCost(summon_label_text)
 
 func set_color_intensity(intensity): # between 0 and 1
 	background_image.material.set_shader_parameter("desaturate_strength",intensity)
@@ -26,3 +26,13 @@ func _process(delta):
 		set_color_intensity(1)
 	else:
 		set_color_intensity(0)
+
+func setSummonCost(summon_label):
+	if summon_label == "1":
+		summon_cost = Autoload.spawn_F1
+	elif summon_label == "2":
+		summon_cost = Autoload.spawn_F2
+	elif summon_label == "3":
+		summon_cost = Autoload.spawn_F3
+		
+	summon_cost_label.text = str(summon_cost)

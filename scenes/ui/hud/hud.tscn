@@ -112,7 +112,6 @@ offset_right = 971.0
 offset_bottom = 11.0
 grow_horizontal = 1
 grow_vertical = 1
-summon_label_text = "1"
 friend_texture = ExtResource("4_3wacb")
 
 [node name="SummonBox2" parent="Panel" instance=ExtResource("3_lw58o")]
@@ -125,7 +124,6 @@ offset_top = 12.0
 offset_right = 1166.0
 offset_bottom = 359.0
 summon_label_text = "2"
-summon_cost = 6
 friend_texture = ExtResource("5_mj33g")
 
 [node name="SummonBox3" parent="Panel" instance=ExtResource("3_lw58o")]
@@ -138,7 +136,6 @@ offset_top = 15.0
 offset_right = 1363.0
 offset_bottom = 362.0
 summon_label_text = "3"
-summon_cost = 12
 friend_texture = ExtResource("6_bn5md")
 
 [node name="SummoningButtonContainer" type="Panel" parent="."]
