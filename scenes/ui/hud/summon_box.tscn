@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bfm6hxasht1pk"]
 
 [ext_resource type="Script" path="res://scenes/ui/hud/summon_box.gd" id="1_e57cy"]
-[ext_resource type="Texture2D" uid="uid://cg5hr4hkq15c" path="res://assets/sprites/ui/Card.png" id="2_jth07"]
+[ext_resource type="Texture2D" uid="uid://b06lhoefxsq4n" path="res://assets/sprites/ui/Card.png" id="2_jth07"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2rcl"]
 bg_color = Color(0, 0, 0, 0.392157)
