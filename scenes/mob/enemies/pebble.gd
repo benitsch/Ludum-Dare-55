@@ -2,7 +2,7 @@ extends "res://scenes/mob/enemies/enemy.gd"
 
 func _init():
 	super()
-	health = 125
-	damage = 25
-	speed = 375
-	attack_speed = 2.0
+	health = 50
+	damage = 5
+	speed = 450
+	attack_speed = 1.0

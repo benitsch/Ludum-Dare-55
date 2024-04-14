@@ -2,12 +2,22 @@ extends CharacterBody2D
 
 class_name Mob
 
-@export var health: int = 100
-@export var damage: int = 10
-@export var speed: int = 100
-@export var attack_speed: float = 3.0
-@onready var player = %Player
+@export var initial_health: int = 100
+@export var initial_damage: int = 10
+@export var initial_speed: int = 100
+@export var initial_attack_speed: float = 3.0
+var player
+var health: int = 100
+var damage: int = 10
+var speed: int = 100
+var attack_speed: float = 3.0
 var last_attack_time: float = 0.0
+
+func _init():
+	health = initial_health
+	damage = initial_damage
+	speed = initial_speed
+	attack_speed = initial_attack_speed
 
 #func _ready():
 	#timer = $AttackSpeedTimer
@@ -15,6 +25,9 @@ var last_attack_time: float = 0.0
 	#timer.connect("timeout", attack_player)
 
 func _physics_process(delta):
+	if player == null:
+		player = $".."/Player
+		
 	check_attack_area(delta)
 
 func receive_damage(dmg):
@@ -50,5 +63,5 @@ func check_attack_area(delta):
 	#
 
 
-func _on_attack_area_body_entered(body):
+func _on_attack_area_body_entered(_body):
 	pass # Replace with function body.

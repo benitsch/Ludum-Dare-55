@@ -2,7 +2,7 @@ extends Area2D
 
 @export var speed: int = 1000
 @export var distance_range: int = 1300
-@export var damage: int = 60
+@export var damage: int = 50
 
 var travelled_distance: float = 0
 

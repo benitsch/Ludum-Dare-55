@@ -7,11 +7,10 @@
 script = ExtResource("1_w0xtn")
 
 [node name="WeaponPivot" type="Marker2D" parent="."]
-position = Vector2(0, -75)
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot"]
 unique_name_in_owner = true
-position = Vector2(67, 0)
+position = Vector2(50, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="WeaponPivot/ShootingPoint"]
 modulate = Color(0, 0.768627, 0.960784, 1)

@@ -87,6 +87,7 @@ shape = SubResource("CircleShape2D_if4v4")
 zoom = Vector2(0.5, 0.5)
 
 [node name="Weapon" parent="." instance=ExtResource("3_16xqx")]
+position = Vector2(114, -174)
 
 [node name="HitBox" type="Area2D" parent="."]
 unique_name_in_owner = true
@@ -97,6 +98,9 @@ shape = SubResource("CircleShape2D_gmut2")
 debug_color = Color(0.909804, 0.152941, 0.627451, 0.419608)
 
 [node name="Summoning" parent="." instance=ExtResource("4_jktg6")]
+visible = false
+summon_cooldown = 2.0
+summoning_distance = 250.0
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true

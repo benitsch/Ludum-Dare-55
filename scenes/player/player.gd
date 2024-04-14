@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var shoot_sfx:AudioStreamPlayer = $ShootSfx
 @export var speed: int = 400
-@export var health: int = 200
+@export var health: int = 500
 var health_bar = null
 
 var is_alive: bool = true

@@ -3,14 +3,19 @@ extends "res://scenes/mob/mob.gd"
 class_name Friend
 
 @export var personal_space: int = 400
-@export var max_health: int = 150
-@export var regeneration: int = 0
+@export var initial_max_health: int = 150
+@export var initial_regeneration: int = 0
 var partial_reg: float = 0
 var enemy_targets: Array[Node2D]
 var target: Node2D
+var max_health: int 
+var regeneration: int
 
 func _init():
+	super()
 	speed = 150
+	max_health = initial_max_health
+	regeneration = initial_regeneration
 
 func _physics_process(delta):
 	super(delta)
@@ -32,11 +37,7 @@ func _physics_process(delta):
 	if target != null:
 		direction = global_position.direction_to(target.global_position)
 		distance = 1
-	elif player == null:
-		player = $".."/Player
-		direction = Vector2.ZERO
-		distance = 0
-	else: 
+	elif player != null:
 		direction = global_position.direction_to(player.global_position)
 		distance = (player.position - position).length() - personal_space
 	
@@ -44,6 +45,9 @@ func _physics_process(delta):
 			distance = -1 
 		elif distance > 1:
 			distance = 1
+	else:
+		direction = Vector2.ZERO
+		distance = 0
 	
 	velocity = direction * speed * distance	
 	move_and_slide()
@@ -58,8 +62,10 @@ func increase_stats(aspects: Array[int]):
 	if aspects[0] < 5:
 		return
 	
-	damage = damage + 20 * aspects[1] 
-	max_health = max_health + max_health * (1 + 0.2 * aspects[2])
+	damage = damage + damage * aspects[1] 
+	@warning_ignore("integer_division")
+	max_health = max_health + (max_health / 2) * aspects[2]
+	health = max_health
 	speed = speed + 25 * aspects[3]
-	attack_speed = attack_speed - 0.5 * aspects[3]
+	attack_speed = attack_speed - attack_speed * aspects[3] * 10
 	regeneration = regeneration + 1 * aspects[4]
