@@ -19,11 +19,6 @@ func _init():
 	speed = initial_speed
 	attack_speed = initial_attack_speed
 
-#func _ready():
-	#timer = $AttackSpeedTimer
-	#timer.wait_time = attack_speed
-	#timer.connect("timeout", attack_player)
-
 func _physics_process(delta):
 	if player == null:
 		player = $".."/Player
