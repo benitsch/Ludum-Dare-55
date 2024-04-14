@@ -101,6 +101,8 @@ animations = [{
 
 [node name="Summoning Circle" type="Area2D"]
 top_level = true
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_o8khu")
 friendsList = Array[PackedScene]([ExtResource("2_kprow"), ExtResource("2_xd7h5"), ExtResource("4_n84s0")])
 
@@ -157,6 +159,7 @@ speed_scale = 0.5
 explosiveness = 0.25
 randomness = 0.5
 lifetime_randomness = 0.2
+local_coords = true
 texture = ExtResource("10_7lhap")
 emission_shape = 1
 emission_sphere_radius = 100.0
@@ -176,3 +179,5 @@ scale_amount_max = 1.5
 color = Color(1, 1, 1, 0.392157)
 hue_variation_min = -1.0
 hue_variation_max = 1.0
+
+[connection signal="finished" from="SummonFailParticle" to="." method="_on_summon_fail_particle_finished"]
