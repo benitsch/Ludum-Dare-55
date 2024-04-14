@@ -8,10 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://b5jkqbip7nb78" path="res://assets/sprites/player/Idle/idle.png" id="6_wme7c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_if4v4"]
-radius = 49.0102
+radius = 59.0762
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gmut2"]
-radius = 58.0086
+radius = 67.0671
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jofnb"]
 bg_color = Color(0.254902, 0.254902, 0.254902, 1)
@@ -96,6 +96,8 @@ shape = SubResource("CircleShape2D_gmut2")
 debug_color = Color(0.909804, 0.152941, 0.627451, 0.419608)
 
 [node name="Summoning" parent="." instance=ExtResource("4_jktg6")]
+summon_cooldown = 2.0
+summoning_distance = 250.0
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
@@ -105,9 +107,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -89.0
-offset_top = -212.5
+offset_top = -389.0
 offset_right = 89.0
-offset_bottom = -185.5
+offset_bottom = -362.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_jofnb")
@@ -116,11 +118,13 @@ show_percentage = false
 
 [node name="player_walk" type="Sprite2D" parent="."]
 visible = false
+position = Vector2(1.5, -149)
 texture = ExtResource("5_vmp8s")
 hframes = 3
 frame = 2
 
 [node name="player_idle_anim" type="Sprite2D" parent="."]
+position = Vector2(1.5, -149)
 texture = ExtResource("6_wme7c")
 hframes = 2
 

@@ -1,12 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://d4lt0b8vnqsgo"]
 
 [ext_resource type="Script" path="res://scenes/mob/mob.gd" id="1_2atju"]
-[ext_resource type="Texture2D" uid="uid://dkfr4s5cgpjxp" path="res://assets/sprites/Square.png" id="2_yuopq"]
+[ext_resource type="Texture2D" uid="uid://i1ov7omskph6" path="res://assets/sprites/Circle.png" id="2_nretx"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cajjk"]
-size = Vector2(34, 34)
+[sub_resource type="CircleShape2D" id="CircleShape2D_8vkfs"]
+resource_local_to_scene = true
+radius = 19.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gjslc"]
+resource_local_to_scene = true
 radius = 26.0
 
 [node name="Mob" type="CharacterBody2D"]
@@ -14,14 +16,12 @@ collision_layer = 2
 collision_mask = 15
 script = ExtResource("1_2atju")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = 0.785398
+[node name="GroundIndicator" type="Sprite2D" parent="."]
 scale = Vector2(0.076, 0.076)
-texture = ExtResource("2_yuopq")
+texture = ExtResource("2_nretx")
 
 [node name="BodyCollider" type="CollisionShape2D" parent="."]
-rotation = 0.785398
-shape = SubResource("RectangleShape2D_cajjk")
+shape = SubResource("CircleShape2D_8vkfs")
 
 [node name="AttackSpeedTimer" type="Timer" parent="."]
 process_mode = 4

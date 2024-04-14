@@ -1,10 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bn654oondytk5"]
+[gd_scene load_steps=6 format=3 uid="uid://bn654oondytk5"]
 
 [ext_resource type="PackedScene" uid="uid://d4lt0b8vnqsgo" path="res://scenes/mob/mob.tscn" id="1_j0jum"]
 [ext_resource type="Script" path="res://scenes/mob/friends/friend.gd" id="2_7d5k2"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_b2vg2"]
+resource_local_to_scene = true
+radius = 19.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_0qc7m"]
-radius = 450.0
+radius = 600.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_twri2"]
+resource_local_to_scene = true
+radius = 26.0
 
 [node name="Friend" instance=ExtResource("1_j0jum")]
 collision_layer = 16
@@ -14,8 +22,8 @@ personal_space = 400
 max_health = 150
 regeneration = 0
 
-[node name="Sprite2D" parent="." index="0"]
-modulate = Color(1, 1, 0.121569, 1)
+[node name="BodyCollider" parent="." index="1"]
+shape = SubResource("CircleShape2D_b2vg2")
 
 [node name="ScanArea" type="Area2D" parent="." index="2"]
 collision_layer = 16
@@ -27,6 +35,9 @@ shape = SubResource("CircleShape2D_0qc7m")
 [node name="AttackArea" parent="." index="4"]
 collision_layer = 16
 collision_mask = 2
+
+[node name="AttackCollider" parent="AttackArea" index="0"]
+shape = SubResource("CircleShape2D_twri2")
 
 [connection signal="body_entered" from="ScanArea" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="ScanArea" to="." method="_on_area_2d_body_exited"]

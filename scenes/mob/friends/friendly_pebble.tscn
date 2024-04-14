@@ -1,19 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://cc28dregyeesa"]
+[gd_scene load_steps=6 format=3 uid="uid://cc28dregyeesa"]
 
 [ext_resource type="PackedScene" uid="uid://bn654oondytk5" path="res://scenes/mob/friends/friend.tscn" id="1_mhuye"]
 [ext_resource type="Script" path="res://scenes/mob/friends/friendly_pebble.gd" id="2_vvnl8"]
-[ext_resource type="Texture2D" uid="uid://i1ov7omskph6" path="res://assets/sprites/Circle.png" id="3_27xya"]
+[ext_resource type="Texture2D" uid="uid://cabfwytsotmsy" path="res://assets/sprites/friends/Helper01.png" id="3_ft22h"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0a2f0"]
-radius = 19.0263
+[sub_resource type="CircleShape2D" id="CircleShape2D_rmw4r"]
+resource_local_to_scene = true
+radius = 35.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_larug"]
+resource_local_to_scene = true
+radius = 45.0
 
 [node name="FriendlyStone" instance=ExtResource("1_mhuye")]
 script = ExtResource("2_vvnl8")
 
-[node name="Sprite2D" parent="." index="0"]
-rotation = 0.0
-texture = ExtResource("3_27xya")
+[node name="BodyCollider" parent="." index="1"]
+shape = SubResource("CircleShape2D_rmw4r")
 
-[node name="CollisionShape2D" parent="." index="1"]
-rotation = 0.0
-shape = SubResource("CircleShape2D_0a2f0")
+[node name="AttackCollider" parent="AttackArea" index="0"]
+shape = SubResource("CircleShape2D_larug")
+
+[node name="Visuals" type="Sprite2D" parent="." index="5"]
+position = Vector2(-1, -51)
+texture = ExtResource("3_ft22h")

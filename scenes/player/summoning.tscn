@@ -9,6 +9,7 @@ script = ExtResource("1_bievt")
 [node name="SummoningPoint" type="Marker2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="SummoningPoint"]
+modulate = Color(1, 0, 0, 1)
 scale = Vector2(0.01, 0.01)
 texture = ExtResource("2_j3k0a")
 

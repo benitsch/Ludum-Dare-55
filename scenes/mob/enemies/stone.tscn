@@ -1,11 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://yqr883qosq3l"]
+[gd_scene load_steps=6 format=3 uid="uid://yqr883qosq3l"]
 
 [ext_resource type="PackedScene" uid="uid://dwqpakwaa7jsf" path="res://scenes/mob/enemies/enemy.tscn" id="1_70vm5"]
 [ext_resource type="Script" path="res://scenes/mob/enemies/stone.gd" id="2_wxkax"]
+[ext_resource type="Texture2D" uid="uid://0k7pk3xi4w8" path="res://assets/sprites/enemy/Enemy02.png" id="3_ci7lp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ilyyq"]
+resource_local_to_scene = true
+radius = 50.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vfkrl"]
+resource_local_to_scene = true
+radius = 70.0
 
 [node name="Stone" instance=ExtResource("1_70vm5")]
 position = Vector2(2, 1)
 script = ExtResource("2_wxkax")
 
+[node name="BodyCollider" parent="." index="1"]
+shape = SubResource("CircleShape2D_ilyyq")
+
 [node name="AttackSpeedTimer" parent="." index="2"]
 process_mode = 0
+
+[node name="AttackCollider" parent="AttackArea" index="0"]
+shape = SubResource("CircleShape2D_vfkrl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="4"]
+position = Vector2(-1, -105)
+texture = ExtResource("3_ci7lp")

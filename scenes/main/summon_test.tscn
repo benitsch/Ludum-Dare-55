@@ -7,6 +7,7 @@
 
 [node name="Player" parent="." instance=ExtResource("1_jqy7h")]
 unique_name_in_owner = true
+position = Vector2(0, -1)
 
 [node name="Stone" parent="." instance=ExtResource("3_8s6vl")]
 position = Vector2(-737, -703)
