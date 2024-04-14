@@ -123,9 +123,8 @@ frame = 2
 [node name="player_idle_anim" type="Sprite2D" parent="."]
 texture = ExtResource("6_wme7c")
 hframes = 2
-frame = 1
 
-[node name="player_animation" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_lwbxh")
 }
