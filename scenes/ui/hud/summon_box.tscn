@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfm6hxasht1pk"]
+[gd_scene load_steps=7 format=3 uid="uid://bfm6hxasht1pk"]
 
 [ext_resource type="Script" path="res://scenes/ui/hud/summon_box.gd" id="1_e57cy"]
+[ext_resource type="Shader" path="res://scenes/ui/hud/greyscale.gdshader" id="2_8ybq0"]
 [ext_resource type="Texture2D" uid="uid://b06lhoefxsq4n" path="res://assets/sprites/ui/Card.png" id="2_jth07"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2rcl"]
@@ -14,6 +15,16 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_okfhq"]
+resource_local_to_scene = true
+shader = ExtResource("2_8ybq0")
+shader_parameter/desaturate_strength = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ep4p2"]
+resource_local_to_scene = true
+shader = ExtResource("2_8ybq0")
+shader_parameter/desaturate_strength = 1.0
 
 [node name="SummonBox" type="Control"]
 layout_mode = 3
@@ -37,6 +48,7 @@ grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_d2rcl")
 
 [node name="TextureRect" type="TextureRect" parent="Container"]
+material = SubResource("ShaderMaterial_okfhq")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -50,7 +62,7 @@ grow_vertical = 2
 texture = ExtResource("2_jth07")
 
 [node name="TextureRectFriend" type="TextureRect" parent="Container"]
-unique_name_in_owner = true
+material = SubResource("ShaderMaterial_ep4p2")
 layout_mode = 0
 offset_left = 41.0
 offset_top = 25.0
@@ -60,6 +72,7 @@ expand_mode = 4
 stretch_mode = 4
 
 [node name="SummonX" type="Label" parent="Container"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0

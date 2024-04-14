@@ -10,3 +10,11 @@ func _process(_delta):
 	#souls_value = Autoload.souls
 	if souls_value_text.text != str(Autoload.souls):
 		souls_value_text.text = str(Autoload.souls)
+
+
+func _on_button_plus_pressed():
+	Autoload.souls += 1
+
+
+func _on_button_minus_pressed():
+	Autoload.souls -= 1
