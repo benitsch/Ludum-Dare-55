@@ -1,10 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cs7mgthnbva1p"]
+[gd_scene load_steps=6 format=3 uid="uid://cs7mgthnbva1p"]
 
 [ext_resource type="PackedScene" uid="uid://bdmagbg845cp5" path="res://scenes/player/player.tscn" id="1_fwwm0"]
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_t21ss"]
 [ext_resource type="PackedScene" uid="uid://qvk7xis33wwj" path="res://scenes/environment/tree.tscn" id="2_jtdep"]
-[ext_resource type="PackedScene" uid="uid://yqr883qosq3l" path="res://scenes/mob/enemies/stone.tscn" id="4_txpgd"]
-[ext_resource type="PackedScene" uid="uid://bn654oondytk5" path="res://scenes/mob/friends/friend.tscn" id="5_w7mi1"]
 [ext_resource type="PackedScene" uid="uid://5ohp2aqmlc48" path="res://scenes/ui/hud/hud.tscn" id="6_xvdfk"]
 [ext_resource type="AudioStream" uid="uid://corgdye6mj748" path="res://assets/music/Positive_Day.mp3" id="7_p8a7m"]
 
@@ -28,12 +26,6 @@ position = Vector2(758, 646)
 
 [node name="Tree" parent="." instance=ExtResource("2_jtdep")]
 position = Vector2(748, 362)
-
-[node name="Stone" parent="." instance=ExtResource("4_txpgd")]
-position = Vector2(1609, 180)
-
-[node name="Friend" parent="." instance=ExtResource("5_w7mi1")]
-position = Vector2(194, 302)
 
 [node name="Hud" parent="." instance=ExtResource("6_xvdfk")]
 
