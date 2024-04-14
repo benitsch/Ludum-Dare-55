@@ -13,6 +13,8 @@ func _init():
 	speed = 150
 
 func _physics_process(delta):
+	super(delta)
+	
 	if health < max_health:
 		partial_reg = partial_reg + regeneration * delta
 		if partial_reg > 1:

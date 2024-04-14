@@ -6,7 +6,9 @@ func _init():
 	# Here you can overwrite parent variables
 	pass
 
-func _physics_process(_delta):
+func _physics_process(delta):
+	super(delta)
+	
 	var direction = global_position.direction_to(player.global_position)
 	velocity = direction * speed
 	move_and_slide()
