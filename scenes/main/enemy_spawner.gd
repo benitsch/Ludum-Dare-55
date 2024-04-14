@@ -84,9 +84,9 @@ func _on_timer_timeout():
 	print("on timer timeout spawner")
 	if Autoload.current_wave > 10:
 		$Timer.wait_time = 30
-	elif $Timer.wait_time > 5:
+	elif Autoload.current_wave > 5:
 		$Timer.wait_time = 20
-	elif $Timer.wait_time > 3:
+	elif Autoload.current_wave > 3:
 		$Timer.wait_time = 15
 	
 	spawn_wave(Autoload.current_wave)
