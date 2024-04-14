@@ -13,5 +13,6 @@ func _ready():
 
 func on_back_pressed() -> void:
 	Autoload.souls = 0
+	Autoload.current_wave = 1
 	AutoloadAudioStreamPlayer.play_SFX(sfx_button_click)
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu/main_menu.tscn")
