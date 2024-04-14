@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3u7fvirwfad2"]
+[gd_scene load_steps=3 format=3 uid="uid://c3u7fvirwfad2"]
 
 [ext_resource type="Script" path="res://scenes/ui/main_menu/main_menu.gd" id="1_4ovbw"]
+[ext_resource type="AudioStream" uid="uid://dempj841dswcp" path="res://assets/music/See_the_Light.mp3" id="2_mfyrl"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -79,3 +80,7 @@ custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Exit Game"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_mfyrl")
+volume_db = -10.0
