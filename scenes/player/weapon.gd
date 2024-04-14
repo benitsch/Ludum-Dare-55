@@ -1,8 +1,8 @@
 extends Node2D
 
 @export var cooldown = 0.5
-@onready var shoot_sfx:AudioStreamPlayer = $ShootSfx
 const BULLET = preload("res://scenes/player/bullet.tscn")
+const sfx_shoot_sound = preload("res://assets/sfx/ambient-metal-whoosh.mp3")
 var can_shoot = true
 
 func _ready():
@@ -13,7 +13,7 @@ func _process(_delta):
 	$WeaponPivot.look_at(get_global_mouse_position())
 
 func shoot():
-	shoot_sfx.play()
+	AutoloadAudioStreamPlayer.play_SFX(sfx_shoot_sound)
 	can_shoot = false
 	%Timer.start()
 	var new_bullet = BULLET.instantiate()

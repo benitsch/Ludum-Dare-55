@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c72brqya5tbws"]
+[gd_scene load_steps=2 format=3 uid="uid://c72brqya5tbws"]
 
 [ext_resource type="Script" path="res://scenes/ui/credits/credits.gd" id="1_qw3ob"]
-[ext_resource type="AudioStream" uid="uid://dempj841dswcp" path="res://assets/music/See_the_Light.mp3" id="2_o3bnl"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -71,7 +70,7 @@ layout_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 42
+theme_override_font_sizes/normal_font_size = 34
 text = "Art:
 							Stephanie Kühnl
 							Natascha Rauscher
@@ -84,7 +83,8 @@ Programming:
 Music & Sfx:
 							\"Positive Day\" by  teknoaxe.com
 							\"See the Light\" by teknoaxe.com
-							\"ambient-metal-whoosh\" by floraphonic @ pixabay.com"
+							\"ambient-metal-whoosh\" by floraphonic @ pixabay.com
+							\"VS Button Click 04.mp3 by Vilkas_Sound @ freesound.org"
 fit_content = true
 autowrap_mode = 0
 
@@ -103,14 +103,10 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -200.0
-offset_top = -98.0
+offset_top = -118.0
 offset_right = 200.0
-offset_bottom = -23.0
+offset_bottom = -43.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 48
 text = "Back"
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_o3bnl")
-volume_db = -10.0

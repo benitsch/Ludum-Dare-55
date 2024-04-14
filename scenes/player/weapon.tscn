@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dq3lyfktnc81m"]
+[gd_scene load_steps=3 format=3 uid="uid://dq3lyfktnc81m"]
 
 [ext_resource type="Script" path="res://scenes/player/weapon.gd" id="1_w0xtn"]
 [ext_resource type="Texture2D" uid="uid://i1ov7omskph6" path="res://assets/sprites/Circle.png" id="2_ml3c7"]
-[ext_resource type="AudioStream" uid="uid://c67q6m4cbokik" path="res://assets/sfx/ambient-metal-whoosh.mp3" id="3_q2rpn"]
 
 [node name="Weapon" type="Node2D"]
 script = ExtResource("1_w0xtn")
@@ -20,8 +19,5 @@ texture = ExtResource("2_ml3c7")
 
 [node name="Timer" type="Timer" parent="WeaponPivot"]
 unique_name_in_owner = true
-
-[node name="ShootSfx" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_q2rpn")
 
 [connection signal="timeout" from="WeaponPivot/Timer" to="." method="_on_timer_timeout"]

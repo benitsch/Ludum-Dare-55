@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://raqsemn4g3nf"]
+[gd_scene load_steps=2 format=3 uid="uid://raqsemn4g3nf"]
 
 [ext_resource type="Script" path="res://scenes/ui/game_over/game_over.gd" id="1_0lwbo"]
-[ext_resource type="AudioStream" uid="uid://dempj841dswcp" path="res://assets/music/See_the_Light.mp3" id="2_8jpjw"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -95,7 +94,3 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 48
 text = "Back"
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_8jpjw")
-volume_db = -10.0
