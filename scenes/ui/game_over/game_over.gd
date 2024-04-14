@@ -1,7 +1,6 @@
 class_name GameOver
 extends Control
 
-@onready var music:AudioStreamPlayer = $Music
 @onready var back_button = $Back_Button as Button
 @onready var label_souls_statistic = $MarginContainer/HBoxContainer/VBoxContainer/LabelSoulsStatistic
 @onready var sfx_button_click = preload("res://assets/sfx/button_click.mp3")

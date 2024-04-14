@@ -21,18 +21,18 @@ func set_color_intensity(intensity): # between 0 and 1
 	background_image.material.set_shader_parameter("desaturate_strength",intensity)
 	friend_image.material.set_shader_parameter("desaturate_strength",intensity)
 
-func _process(delta):
+func _process(_delta):
 	if Autoload.souls >= summon_cost:
 		set_color_intensity(1)
 	else:
 		set_color_intensity(0)
 
-func setSummonCost(summon_label):
-	if summon_label == "1":
+func setSummonCost(sumLab):
+	if sumLab == "1":
 		summon_cost = Autoload.spawn_F1
-	elif summon_label == "2":
+	elif sumLab == "2":
 		summon_cost = Autoload.spawn_F2
-	elif summon_label == "3":
+	elif sumLab == "3":
 		summon_cost = Autoload.spawn_F3
 		
 	summon_cost_label.text = str(summon_cost)

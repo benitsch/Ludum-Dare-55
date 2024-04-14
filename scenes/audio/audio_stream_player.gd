@@ -17,9 +17,9 @@ func play_level_music():
 func play_menu_music():
 	_play_music(menu_music)
 
-func play_SFX(stream: AudioStream, volume = 0.0):
+func play_SFX(audStr: AudioStream, volume = 0.0):
 	var sfx_player = AudioStreamPlayer.new()
-	sfx_player.stream = stream
+	sfx_player.stream = audStr
 	sfx_player.name = "SFX_PLAYER"
 	sfx_player.volume_db = volume
 	add_child(sfx_player)
