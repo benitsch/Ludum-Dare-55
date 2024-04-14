@@ -4,5 +4,5 @@ func _init():
 	super()	
 	health = 350
 	damage = 45
-	speed = 80
+	speed = 300
 	attack_speed = 3.5

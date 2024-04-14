@@ -49,7 +49,7 @@ func _physics_process(delta):
 		direction = Vector2.ZERO
 		distance = 0
 	
-	velocity = direction * speed * distance	
+	velocity = direction * speed * distance
 	move_and_slide()
 
 func _on_area_2d_body_entered(body):

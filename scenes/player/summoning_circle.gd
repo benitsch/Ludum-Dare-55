@@ -91,6 +91,7 @@ func summon_fail():
 	$MagicCircle.visible = false
 	Autoload.is_summoning = false
 	particles.restart()
+	particles.emitting = true
 
 func summon_mob():
 	Autoload.is_summoning = false

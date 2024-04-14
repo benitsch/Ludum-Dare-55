@@ -1,14 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://51agthesu0tu"]
+[gd_scene load_steps=7 format=3 uid="uid://51agthesu0tu"]
 
+[ext_resource type="Texture2D" uid="uid://dkfr4s5cgpjxp" path="res://assets/sprites/Square.png" id="1_76lks"]
 [ext_resource type="PackedScene" uid="uid://bdmagbg845cp5" path="res://scenes/player/player.tscn" id="1_jqy7h"]
 [ext_resource type="PackedScene" uid="uid://yqr883qosq3l" path="res://scenes/mob/enemies/stone.tscn" id="3_8s6vl"]
 [ext_resource type="PackedScene" uid="uid://dnq8uv3hc8tqp" path="res://scenes/mob/enemies/pebble.tscn" id="3_txywr"]
 [ext_resource type="PackedScene" uid="uid://cs3e51epdiqn" path="res://scenes/mob/enemies/boulder.tscn" id="4_vhvlg"]
+[ext_resource type="PackedScene" uid="uid://5ohp2aqmlc48" path="res://scenes/ui/hud/hud.tscn" id="5_43l38"]
 
 [node name="SummonTest" type="Node2D"]
 
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.447059, 0.54902, 0.180392, 1)
+texture_repeat = 2
+texture = ExtResource("1_76lks")
+region_enabled = true
+region_rect = Rect2(0, 0, 40000, 40000)
+
 [node name="Player" parent="." instance=ExtResource("1_jqy7h")]
 unique_name_in_owner = true
+
+[node name="Hud" parent="." instance=ExtResource("5_43l38")]
 
 [node name="Stone" parent="." instance=ExtResource("3_8s6vl")]
 position = Vector2(-2214, -1444)
