@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://raqsemn4g3nf"]
+[gd_scene load_steps=4 format=3 uid="uid://raqsemn4g3nf"]
 
 [ext_resource type="Script" path="res://scenes/ui/game_over/game_over.gd" id="1_0lwbo"]
 [ext_resource type="Texture2D" uid="uid://btipnj733asfk" path="res://assets/sprites/background/OverScreen.png" id="2_g7t6s"]
+[ext_resource type="Theme" uid="uid://c7mgdp5cw0qyi" path="res://scenes/ui/main_menu/main_menu.tres" id="3_b6xk5"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -64,6 +65,7 @@ alignment = 1
 
 [node name="LabelSoulsStatistic" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.976471, 0.941176, 0.87451, 1)
 theme_override_colors/font_shadow_color = Color(0.141176, 0.0313726, 0.231373, 1)
 theme_override_font_sizes/font_size = 48
 text = "You managed to collect 0 souls."
@@ -96,5 +98,6 @@ offset_right = 198.0
 offset_bottom = -44.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("3_b6xk5")
 theme_override_font_sizes/font_size = 48
 text = "Back"

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3u7fvirwfad2"]
+[gd_scene load_steps=4 format=3 uid="uid://c3u7fvirwfad2"]
 
 [ext_resource type="Script" path="res://scenes/ui/main_menu/main_menu.gd" id="1_4ovbw"]
 [ext_resource type="Texture2D" uid="uid://txn4txvqvjr3" path="res://assets/sprites/StartMenuBackground.png" id="2_fjlaj"]
+[ext_resource type="Theme" uid="uid://c7mgdp5cw0qyi" path="res://scenes/ui/main_menu/main_menu.tres" id="3_gfc0e"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -68,17 +69,20 @@ layout_mode = 2
 [node name="Start_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(400, 32)
 layout_mode = 2
+theme = ExtResource("3_gfc0e")
 theme_override_font_sizes/font_size = 48
 text = "Start Game"
 
 [node name="Credits_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
+theme = ExtResource("3_gfc0e")
 theme_override_font_sizes/font_size = 48
 text = "Credits"
 
 [node name="Exit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
+theme = ExtResource("3_gfc0e")
 theme_override_font_sizes/font_size = 48
 text = "Exit Game"
