@@ -23,9 +23,6 @@ texture = ExtResource("2_nretx")
 [node name="BodyCollider" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_8vkfs")
 
-[node name="AttackSpeedTimer" type="Timer" parent="."]
-process_mode = 4
-
 [node name="AttackArea" type="Area2D" parent="."]
 collision_layer = 18
 collision_mask = 18
