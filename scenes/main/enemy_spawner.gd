@@ -22,6 +22,13 @@ func _ready():
 	$Timer.start()
 	spawn_wave(Autoload.current_wave, true)
 
+func _process(_delta):
+	var current_time = $Timer.time_left
+	var current_seconds = int(current_time)
+	if current_seconds != Autoload.wave_timer:
+		print(current_seconds)
+		Autoload.wave_timer = current_seconds
+
 # Funktion zum Spawnen einer Welle von Feinden
 func spawn_wave(waveNumber, defer = false):
 	print("Spawn Wave Nr:", waveNumber)

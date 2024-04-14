@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/main/enemy_spawner.gd" id="1_i38ao"]
 [ext_resource type="PackedScene" uid="uid://dnq8uv3hc8tqp" path="res://scenes/mob/enemies/pebble.tscn" id="2_nben1"]
 [ext_resource type="PackedScene" uid="uid://yqr883qosq3l" path="res://scenes/mob/enemies/stone.tscn" id="3_kqdgt"]
-[ext_resource type="PackedScene" uid="uid://bvc2q7u51edmn" path="res://scenes/mob/enemies/boulder.tscn" id="4_addsj"]
+[ext_resource type="PackedScene" uid="uid://cs3e51epdiqn" path="res://scenes/mob/enemies/boulder.tscn" id="4_addsj"]
 
 [node name="EnemySpawner" type="Node2D"]
 script = ExtResource("1_i38ao")
