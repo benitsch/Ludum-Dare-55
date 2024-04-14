@@ -21,14 +21,11 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kg8j2"]
-bg_color = Color(0.576471, 0.803922, 0.772549, 1)
+bg_color = Color(0.662745, 0.847059, 0.254902, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
-shadow_color = Color(0.141176, 0.0313726, 0.231373, 1)
-shadow_size = 5
-shadow_offset = Vector2(3, 3)
 
 [sub_resource type="Animation" id="Animation_n4q11"]
 resource_name = "player_idle"

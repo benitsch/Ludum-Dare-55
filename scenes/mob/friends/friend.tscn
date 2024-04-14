@@ -32,7 +32,7 @@ collision_mask = 2
 [node name="ScanCollitionArea" type="CollisionShape2D" parent="ScanArea" index="0"]
 shape = SubResource("CircleShape2D_0qc7m")
 
-[node name="AttackArea" parent="." index="4"]
+[node name="AttackArea" parent="." index="3"]
 collision_layer = 16
 collision_mask = 2
 

@@ -17,7 +17,7 @@ script = ExtResource("1_hiljj")
 [node name="BodyCollider" parent="." index="1"]
 shape = SubResource("CircleShape2D_5j0po")
 
-[node name="AttackArea" parent="." index="3"]
+[node name="AttackArea" parent="." index="2"]
 collision_layer = 2
 collision_mask = 16
 

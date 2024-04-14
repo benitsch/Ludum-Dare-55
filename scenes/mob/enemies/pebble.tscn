@@ -19,12 +19,9 @@ script = ExtResource("2_1t2wc")
 [node name="BodyCollider" parent="." index="1"]
 shape = SubResource("CircleShape2D_ilyyq")
 
-[node name="AttackSpeedTimer" parent="." index="2"]
-process_mode = 0
-
 [node name="AttackCollider" parent="AttackArea" index="0"]
 shape = SubResource("CircleShape2D_vfkrl")
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="4"]
+[node name="Sprite2D" type="Sprite2D" parent="." index="3"]
 position = Vector2(2, -41)
 texture = ExtResource("3_2bs71")

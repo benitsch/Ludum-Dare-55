@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cs3e51epdiqn"]
+[gd_scene load_steps=6 format=3 uid="uid://bvc2q7u51edmn"]
 
 [ext_resource type="PackedScene" uid="uid://dwqpakwaa7jsf" path="res://scenes/mob/enemies/enemy.tscn" id="1_dff7q"]
 [ext_resource type="Script" path="res://scenes/mob/enemies/boulder.gd" id="2_v57wy"]
@@ -19,12 +19,9 @@ script = ExtResource("2_v57wy")
 [node name="BodyCollider" parent="." index="1"]
 shape = SubResource("CircleShape2D_ilyyq")
 
-[node name="AttackSpeedTimer" parent="." index="2"]
-process_mode = 0
-
 [node name="AttackCollider" parent="AttackArea" index="0"]
 shape = SubResource("CircleShape2D_vfkrl")
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="4"]
+[node name="Sprite2D" type="Sprite2D" parent="." index="3"]
 position = Vector2(-5, -92)
 texture = ExtResource("3_3xyj7")

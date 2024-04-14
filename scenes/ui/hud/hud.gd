@@ -6,7 +6,7 @@ var health = 25;
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	#souls_value = Autoload.souls
 	if souls_value_text.text != str(Autoload.souls):
 		souls_value_text.text = str(Autoload.souls)

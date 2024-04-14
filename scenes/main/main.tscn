@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cs7mgthnbva1p"]
+[gd_scene load_steps=6 format=3 uid="uid://cs7mgthnbva1p"]
 
 [ext_resource type="PackedScene" uid="uid://bdmagbg845cp5" path="res://scenes/player/player.tscn" id="1_fwwm0"]
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_t21ss"]
-[ext_resource type="PackedScene" uid="uid://qvk7xis33wwj" path="res://scenes/environment/tree.tscn" id="2_jtdep"]
-[ext_resource type="PackedScene" uid="uid://b5dswyjlppu1f" path="res://scenes/main/EnemySpawner.tscn" id="6_n0cri"]
+[ext_resource type="PackedScene" uid="uid://nwxhsbyioma1" path="res://scenes/main/enemy_spawner.tscn" id="5_ldowl"]
 [ext_resource type="PackedScene" uid="uid://5ohp2aqmlc48" path="res://scenes/ui/hud/hud.tscn" id="6_xvdfk"]
 [ext_resource type="AudioStream" uid="uid://corgdye6mj748" path="res://assets/music/Positive_Day.mp3" id="7_p8a7m"]
 
@@ -24,9 +23,7 @@ color = Color(0.760784, 0.784314, 0.592157, 1)
 [node name="Player" parent="." instance=ExtResource("1_fwwm0")]
 unique_name_in_owner = true
 position = Vector2(758, 646)
-
-[node name="Tree" parent="." instance=ExtResource("2_jtdep")]
-position = Vector2(748, 362)
+health = 100
 
 [node name="Hud" parent="." instance=ExtResource("6_xvdfk")]
 
@@ -34,5 +31,4 @@ position = Vector2(748, 362)
 stream = ExtResource("7_p8a7m")
 volume_db = -10.0
 
-[node name="EnemySpawner" parent="." instance=ExtResource("6_n0cri")]
-wave_spawn_delay = 1.0
+[node name="EnemySpawner" parent="." instance=ExtResource("5_ldowl")]
