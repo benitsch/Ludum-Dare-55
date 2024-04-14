@@ -97,7 +97,6 @@ debug_color = Color(0.909804, 0.152941, 0.627451, 0.419608)
 
 [node name="Summoning" parent="." instance=ExtResource("4_jktg6")]
 summon_cooldown = 2.0
-summoning_distance = 250.0
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
