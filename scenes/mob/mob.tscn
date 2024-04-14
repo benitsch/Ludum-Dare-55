@@ -17,8 +17,7 @@ collision_mask = 15
 script = ExtResource("1_2atju")
 
 [node name="GroundIndicator" type="Sprite2D" parent="."]
-modulate = Color(0.196078, 0.196078, 0.196078, 0.396078)
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.076, 0.076)
 texture = ExtResource("2_nretx")
 
 [node name="BodyCollider" type="CollisionShape2D" parent="."]
@@ -33,5 +32,3 @@ collision_mask = 18
 
 [node name="AttackCollider" type="CollisionShape2D" parent="AttackArea"]
 shape = SubResource("CircleShape2D_gjslc")
-
-[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
