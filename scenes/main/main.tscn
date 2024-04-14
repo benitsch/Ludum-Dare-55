@@ -1,13 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://cs7mgthnbva1p"]
+[gd_scene load_steps=7 format=3 uid="uid://cs7mgthnbva1p"]
 
 [ext_resource type="PackedScene" uid="uid://bdmagbg845cp5" path="res://scenes/player/player.tscn" id="1_fwwm0"]
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_t21ss"]
+[ext_resource type="Texture2D" uid="uid://ci1gnv06xnxd8" path="res://assets/sprites/background/BackgroundInGame01.jpg" id="2_ou44x"]
 [ext_resource type="PackedScene" uid="uid://nwxhsbyioma1" path="res://scenes/main/enemy_spawner.tscn" id="5_ldowl"]
+[ext_resource type="Texture2D" uid="uid://djk16v38cjduw" path="res://assets/sprites/Shine.png" id="6_twkln"]
 [ext_resource type="PackedScene" uid="uid://5ohp2aqmlc48" path="res://scenes/ui/hud/hud.tscn" id="6_xvdfk"]
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_t21ss")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_repeat = 2
+texture = ExtResource("2_ou44x")
+region_enabled = true
+region_rect = Rect2(0, 0, 21000, 21000)
 
 [node name="Player" parent="." instance=ExtResource("1_fwwm0")]
 unique_name_in_owner = true
@@ -17,3 +25,328 @@ health = 100
 [node name="Hud" parent="." instance=ExtResource("6_xvdfk")]
 
 [node name="EnemySpawner" parent="." instance=ExtResource("5_ldowl")]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+modulate = Color(0.705882, 0, 0.756863, 0.705882)
+top_level = true
+rotation = 0.00026217
+
+[node name="BoarderClouds" type="Sprite2D" parent="Marker2D"]
+position = Vector2(-11145, 121)
+rotation = -1.31819
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds2" type="Sprite2D" parent="Marker2D"]
+position = Vector2(-9484, -6434)
+rotation = -0.641187
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds3" type="Sprite2D" parent="Marker2D"]
+position = Vector2(-4047, -10512)
+rotation = -0.18608
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds4" type="Sprite2D" parent="Marker2D"]
+position = Vector2(2426, -11228)
+rotation = 0.295012
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds5" type="Sprite2D" parent="Marker2D"]
+position = Vector2(7289, -8630)
+rotation = 0.999088
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds6" type="Sprite2D" parent="Marker2D"]
+position = Vector2(11215, -1804)
+rotation = 1.67439
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds7" type="Sprite2D" parent="Marker2D"]
+position = Vector2(9179, 6252)
+rotation = 2.42505
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds8" type="Sprite2D" parent="Marker2D"]
+position = Vector2(1939, 10506)
+rotation = 3.2531
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds9" type="Sprite2D" parent="Marker2D"]
+position = Vector2(-6705, 8696)
+rotation = 3.96404
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds10" type="Sprite2D" parent="Marker2D"]
+position = Vector2(-10144, 5031)
+rotation = 4.36135
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+modulate = Color(0.705882, 0, 0.756863, 0.705882)
+top_level = true
+rotation = 0.386971
+
+[node name="BoarderClouds" type="Sprite2D" parent="Marker2D2"]
+position = Vector2(-11145, 121)
+rotation = -1.31819
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds2" type="Sprite2D" parent="Marker2D2"]
+position = Vector2(-9484, -6434)
+rotation = -0.641187
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds3" type="Sprite2D" parent="Marker2D2"]
+position = Vector2(-4047, -10512)
+rotation = -0.18608
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds4" type="Sprite2D" parent="Marker2D2"]
+position = Vector2(2426, -11228)
+rotation = 0.295012
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds5" type="Sprite2D" parent="Marker2D2"]
+position = Vector2(7289, -8630)
+rotation = 0.999088
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds6" type="Sprite2D" parent="Marker2D2"]
+position = Vector2(11215, -1804)
+rotation = 1.67439
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds7" type="Sprite2D" parent="Marker2D2"]
+position = Vector2(9179, 6252)
+rotation = 2.42505
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds8" type="Sprite2D" parent="Marker2D2"]
+position = Vector2(1939, 10506)
+rotation = 3.2531
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds9" type="Sprite2D" parent="Marker2D2"]
+position = Vector2(-6705, 8696)
+rotation = 3.96404
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds10" type="Sprite2D" parent="Marker2D2"]
+position = Vector2(-10144, 5031)
+rotation = 4.36135
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+modulate = Color(0.541176, 0.286275, 0.796078, 0.705882)
+top_level = true
+rotation = 0.882926
+
+[node name="BoarderClouds" type="Sprite2D" parent="Marker2D3"]
+position = Vector2(-11145, 121)
+rotation = -1.31819
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds2" type="Sprite2D" parent="Marker2D3"]
+position = Vector2(-9484, -6434)
+rotation = -0.641187
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds3" type="Sprite2D" parent="Marker2D3"]
+position = Vector2(-4047, -10512)
+rotation = -0.18608
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds4" type="Sprite2D" parent="Marker2D3"]
+position = Vector2(2426, -11228)
+rotation = 0.295012
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds5" type="Sprite2D" parent="Marker2D3"]
+position = Vector2(7289, -8630)
+rotation = 0.999088
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds6" type="Sprite2D" parent="Marker2D3"]
+position = Vector2(11215, -1804)
+rotation = 1.67439
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds7" type="Sprite2D" parent="Marker2D3"]
+position = Vector2(9179, 6252)
+rotation = 2.42505
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds8" type="Sprite2D" parent="Marker2D3"]
+position = Vector2(1939, 10506)
+rotation = 3.2531
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds9" type="Sprite2D" parent="Marker2D3"]
+position = Vector2(-6705, 8696)
+rotation = 3.96404
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds10" type="Sprite2D" parent="Marker2D3"]
+position = Vector2(-10144, 5031)
+rotation = 4.36135
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="Marker2D4" type="Marker2D" parent="."]
+modulate = Color(0.541176, 0.286275, 0.796078, 0.705882)
+top_level = true
+rotation = 1.49408
+
+[node name="BoarderClouds" type="Sprite2D" parent="Marker2D4"]
+position = Vector2(-11145, 121)
+rotation = -1.31819
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds2" type="Sprite2D" parent="Marker2D4"]
+position = Vector2(-9484, -6434)
+rotation = -0.641187
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds3" type="Sprite2D" parent="Marker2D4"]
+position = Vector2(-4047, -10512)
+rotation = -0.18608
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds4" type="Sprite2D" parent="Marker2D4"]
+position = Vector2(2426, -11228)
+rotation = 0.295012
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds5" type="Sprite2D" parent="Marker2D4"]
+position = Vector2(7289, -8630)
+rotation = 0.999088
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds6" type="Sprite2D" parent="Marker2D4"]
+position = Vector2(11215, -1804)
+rotation = 1.67439
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds7" type="Sprite2D" parent="Marker2D4"]
+position = Vector2(9179, 6252)
+rotation = 2.42505
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds8" type="Sprite2D" parent="Marker2D4"]
+position = Vector2(1939, 10506)
+rotation = 3.2531
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds9" type="Sprite2D" parent="Marker2D4"]
+position = Vector2(-6705, 8696)
+rotation = 3.96404
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds10" type="Sprite2D" parent="Marker2D4"]
+position = Vector2(-10144, 5031)
+rotation = 4.36135
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="Marker2D5" type="Marker2D" parent="."]
+modulate = Color(0.352941, 0.380392, 0.823529, 0.313726)
+top_level = true
+rotation = 2.09688
+
+[node name="BoarderClouds" type="Sprite2D" parent="Marker2D5"]
+position = Vector2(-11145, 121)
+rotation = -1.31819
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds2" type="Sprite2D" parent="Marker2D5"]
+position = Vector2(-9484, -6434)
+rotation = -0.641187
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds3" type="Sprite2D" parent="Marker2D5"]
+position = Vector2(-4047, -10512)
+rotation = -0.18608
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds4" type="Sprite2D" parent="Marker2D5"]
+position = Vector2(2426, -11228)
+rotation = 0.295012
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds5" type="Sprite2D" parent="Marker2D5"]
+position = Vector2(7289, -8630)
+rotation = 0.999088
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds6" type="Sprite2D" parent="Marker2D5"]
+position = Vector2(11215, -1804)
+rotation = 1.67439
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds7" type="Sprite2D" parent="Marker2D5"]
+position = Vector2(9179, 6252)
+rotation = 2.42505
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds8" type="Sprite2D" parent="Marker2D5"]
+position = Vector2(1939, 10506)
+rotation = 3.2531
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds9" type="Sprite2D" parent="Marker2D5"]
+position = Vector2(-6705, 8696)
+rotation = 3.96404
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
+
+[node name="BoarderClouds10" type="Sprite2D" parent="Marker2D5"]
+position = Vector2(-10144, 5031)
+rotation = 4.36135
+scale = Vector2(100, 100)
+texture = ExtResource("6_twkln")
