@@ -26,7 +26,6 @@ func _physics_process(delta):
 	check_attack_area(delta)
 
 func receive_damage(dmg):
-	print("mob receive_damage")
 	health -= dmg
 	if health <= 0:
 		queue_free()

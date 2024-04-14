@@ -29,7 +29,6 @@ func _process(_delta):
 
 # Funktion zum Spawnen einer Welle von Feinden
 func spawn_wave(waveNumber, defer = false):
-	print("Spawn Wave Nr:", waveNumber)
 	# Berechne die Basisanzahl von Feinden für jeden Typ
 	var baseWeakCount = waveNumber * baseWeakEnemiesPerWave
 	var baseMediumCount = waveNumber * baseMediumEnemiesPerWave
@@ -73,11 +72,11 @@ func spawnEnemy(enemyType, defer):
 func _on_timer_timeout():
 	Autoload.current_wave += 1
 	
-	if Autoload.current_wave > 10:
+	if Autoload.current_wave > 5:
 		$Timer.wait_time = 30
-	elif Autoload.current_wave > 5:
-		$Timer.wait_time = 20
 	elif Autoload.current_wave > 3:
+		$Timer.wait_time = 20
+	elif Autoload.current_wave > 1:
 		$Timer.wait_time = 15
 	
 	spawn_wave(Autoload.current_wave)

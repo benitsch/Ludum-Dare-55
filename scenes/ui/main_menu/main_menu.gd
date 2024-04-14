@@ -18,9 +18,9 @@ func on_start_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
 
 func on_credits_pressed() -> void:
-	AutoloadAudioStreamPlayer.play_SFX(sfx_button_click)	
+	AutoloadAudioStreamPlayer.play_SFX(sfx_button_click)
 	get_tree().change_scene_to_file("res://scenes/ui/credits/credits.tscn")
 
 func on_exit_pressed() -> void:
-	AutoloadAudioStreamPlayer.play_SFX(sfx_button_click)	
+	AutoloadAudioStreamPlayer.play_SFX(sfx_button_click)
 	get_tree().quit()

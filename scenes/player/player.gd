@@ -48,10 +48,8 @@ func check_hitbox(delta):
 				receive_damage(enemy.damage)
 
 func receive_damage(dmg):
-	print("player call func receive_damage with dmg:", dmg)
 	health -= dmg
 	health_bar.value = health
 	if not is_alive or health <= 0:
 		is_alive = false
-		print("player dead")
 		get_tree().change_scene_to_file("res://scenes/ui/game_over/game_over.tscn")
