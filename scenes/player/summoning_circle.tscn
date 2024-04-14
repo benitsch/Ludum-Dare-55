@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfydw3gudm48k"]
+[gd_scene load_steps=10 format=3 uid="uid://dfydw3gudm48k"]
 
 [ext_resource type="Texture2D" uid="uid://i1ov7omskph6" path="res://assets/sprites/Circle.png" id="1_6y0ss"]
 [ext_resource type="Script" path="res://scenes/player/summoning_circle.gd" id="1_o8khu"]
-[ext_resource type="PackedScene" uid="uid://dnnh7m8d5lypy" path="res://scenes/mob/friends/friendly_stone.tscn" id="2_xd7h5"]
+[ext_resource type="PackedScene" uid="uid://cc28dregyeesa" path="res://scenes/mob/friends/friendly_pebble.tscn" id="2_kprow"]
+[ext_resource type="PackedScene" uid="uid://vnl14knqtjo" path="res://scenes/mob/friends/friendly_stone.tscn" id="2_xd7h5"]
+[ext_resource type="PackedScene" uid="uid://bfw524dqnddcr" path="res://scenes/mob/friends/friendly_boulder.tscn" id="4_n84s0"]
 
 [sub_resource type="Animation" id="Animation_vfijg"]
 length = 0.001
@@ -87,7 +89,7 @@ radius = 55.0
 [node name="Summoning Circle" type="Area2D"]
 top_level = true
 script = ExtResource("1_o8khu")
-friendsList = Array[PackedScene]([ExtResource("2_xd7h5")])
+friendsList = Array[PackedScene]([ExtResource("2_kprow"), ExtResource("2_xd7h5"), ExtResource("4_n84s0")])
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

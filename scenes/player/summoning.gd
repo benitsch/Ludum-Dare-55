@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var summon_cooldown: float = 0.1
-@export var summoning_distance: float = 250
+@export var summoning_distance: float = 200
 @export var rotation_speed: int = 1000
 
 const summon_cast: PackedScene = preload("res://scenes/player/summoning_circle.tscn")

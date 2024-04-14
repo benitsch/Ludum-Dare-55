@@ -51,3 +51,13 @@ func _on_area_2d_body_entered(body):
 
 func _on_area_2d_body_exited(body):
 	enemy_targets.erase(body)
+
+func increase_stats(aspects: Array[int]):
+	if aspects[0] < 5:
+		return
+	
+	damage = damage + 20 * aspects[1] 
+	max_health = max_health + max_health * (1 + 0.2 * aspects[2])
+	speed = speed + 25 * aspects[3]
+	attack_speed = attack_speed - 0.5 * aspects[3]
+	regeneration = regeneration + 1 * aspects[4]

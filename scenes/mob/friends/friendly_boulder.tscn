@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfw524dqnddcr"]
+
+[ext_resource type="PackedScene" uid="uid://bn654oondytk5" path="res://scenes/mob/friends/friend.tscn" id="1_ww8r0"]
+[ext_resource type="Script" path="res://scenes/mob/friends/friendly_boulder.gd" id="2_xi4k7"]
+[ext_resource type="Texture2D" uid="uid://i1ov7omskph6" path="res://assets/sprites/Circle.png" id="3_wy8mx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0a2f0"]
+radius = 19.0263
+
+[node name="FriendlyStone" instance=ExtResource("1_ww8r0")]
+script = ExtResource("2_xi4k7")
+
+[node name="Sprite2D" parent="." index="0"]
+rotation = 0.0
+texture = ExtResource("3_wy8mx")
+
+[node name="CollisionShape2D" parent="." index="1"]
+rotation = 0.0
+shape = SubResource("CircleShape2D_0a2f0")

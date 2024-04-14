@@ -17,12 +17,12 @@ regeneration = 0
 [node name="Sprite2D" parent="." index="0"]
 modulate = Color(1, 1, 0.121569, 1)
 
-[node name="Area2D" type="Area2D" parent="." index="2"]
+[node name="ScanArea" type="Area2D" parent="." index="2"]
 collision_layer = 16
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+[node name="ScanCollitionArea" type="CollisionShape2D" parent="ScanArea" index="0"]
 shape = SubResource("CircleShape2D_0qc7m")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="ScanArea" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="ScanArea" to="." method="_on_area_2d_body_exited"]
