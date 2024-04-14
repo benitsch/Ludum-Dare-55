@@ -30,9 +30,16 @@ func get_input():
 		"move_up",
 		"move_down").normalized()
 	if direction:
+		if direction == Vector2.RIGHT:
+			$player_sprite.flip_h = false
+			$AnimationPlayer.play("player_walk")
+		else:
+			$player_sprite.flip_h = true
+			$AnimationPlayer.play("player_walk")
 		velocity = direction * speed
 	else:
 		velocity = Vector2.ZERO
+		$AnimationPlayer.play("player_idle")
 	
 	# Mouse input
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
