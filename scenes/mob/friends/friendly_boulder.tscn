@@ -21,6 +21,13 @@ shape = SubResource("CircleShape2D_1tkpo")
 [node name="AttackCollider" parent="AttackArea" index="0"]
 shape = SubResource("CircleShape2D_4hdnk")
 
-[node name="Visuals" type="Sprite2D" parent="." index="4"]
-position = Vector2(-6, -99)
-texture = ExtResource("3_v6lpi")
+[node name="friend_03_walk" type="Sprite2D" parent="." index="4"]
+position = Vector2(-5, -123)
+texture = ExtResource("4_pptm2")
+hframes = 3
+
+[node name="friend_03_animation" type="AnimationPlayer" parent="." index="5"]
+libraries = {
+"": SubResource("AnimationLibrary_3l8ic")
+}
+autoplay = "friend_03_walk"
