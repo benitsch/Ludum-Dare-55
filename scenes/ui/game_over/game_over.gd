@@ -11,4 +11,5 @@ func _ready():
 	music.play()
 
 func on_back_pressed() -> void:
+	Autoload.souls = 0
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu/main_menu.tscn")
