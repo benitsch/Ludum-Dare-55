@@ -23,8 +23,15 @@ func _physics_process(delta):
 
 func get_input():
 	# Keyboard input
-	var direction: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	velocity = direction.normalized() * speed
+	var direction: Vector2 = Input.get_vector(
+		"move_left",
+		"move_right",
+		"move_up",
+		"move_down").normalized()
+	if direction:
+		velocity = direction * speed
+	else:
+		velocity = Vector2.ZERO
 	
 	# Mouse input
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
