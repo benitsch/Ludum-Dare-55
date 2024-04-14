@@ -3,8 +3,8 @@ extends Node2D
 @export var weakEnemies: Array[PackedScene]
 @export var mediumEnemies: Array[PackedScene]
 @export var strongEnemies: Array[PackedScene]
-@export var wave_spawn_delay: float = 30.0
 @export var difficultyRandomFactor: float = 0.5
+var wave_spawn_delay: int = 10
 
 var baseWeakEnemiesPerWave = 3
 var baseMediumEnemiesPerWave = 2
@@ -82,4 +82,11 @@ func spawnEnemy(enemyType, defer):
 
 func _on_timer_timeout():
 	print("on timer timeout spawner")
+	if Autoload.current_wave > 10:
+		$Timer.wait_time = 30
+	elif $Timer.wait_time > 5:
+		$Timer.wait_time = 20
+	elif $Timer.wait_time > 3:
+		$Timer.wait_time = 15
+	
 	spawn_wave(Autoload.current_wave)
