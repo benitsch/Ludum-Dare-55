@@ -5,7 +5,7 @@ extends Area2D
 var spawnIndex: int = -1
 var aspect_values: Array[int] = [0, 0, 0, 0, 0]
 var animator: AnimationPlayer
-var particles: CPUParticles2D
+var fail_particles: CPUParticles2D
 var summon_failed: bool = false
 var aspect1: AnimatedSprite2D
 var aspect2: AnimatedSprite2D
@@ -22,7 +22,7 @@ func _ready():
 	offset = offset * randi_range(15, 55)
 	position = position + offset
 	animator = $AnimationPlayer
-	particles = $SummonFailParticle
+	fail_particles = $SummonFailParticle
 	aspect1 = $MagicCircle/Aspect1
 	aspect1.visible = false
 	aspect2 = $MagicCircle/Aspect2
@@ -36,8 +36,6 @@ func _ready():
 
 func _process(_delta):
 	if summon_failed:
-		if particles.finished: 
-			queue_free()
 		return
 	
 	if animator.current_animation_position < 1:
@@ -88,18 +86,22 @@ func summon_addAspect(aspect_index):
 			pass
 
 func summon_fail():
-	print("FAIL")
 	summon_failed = true
-	animator.stop()
+	animator.pause()
 	$MagicCircle.visible = false
 	Autoload.is_summoning = false
-	particles.emitting = true
+	fail_particles.global_position = global_position
+	fail_particles.restart()
 
 func summon_mob():
 	Autoload.is_summoning = false
 	
-	if not summon_fail() && -1 < spawnIndex && spawnIndex < friendsList.size():
+	if not summon_failed && -1 < spawnIndex && spawnIndex < friendsList.size():
 		var mob = friendsList[spawnIndex].instantiate()
 		mob.position = global_position
 		mob.increase_stats(aspect_values)
 		$"..".add_child(mob)
+
+
+func _on_summon_fail_particle_finished():
+	queue_free()
