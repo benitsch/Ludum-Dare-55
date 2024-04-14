@@ -1,17 +1,18 @@
-[gd_scene load_steps=14 format=3 uid="uid://bdmagbg845cp5"]
+[gd_scene load_steps=15 format=3 uid="uid://bdmagbg845cp5"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_2p3cu"]
 [ext_resource type="Texture2D" uid="uid://i1ov7omskph6" path="res://assets/sprites/Circle.png" id="2_67ubt"]
 [ext_resource type="PackedScene" uid="uid://dq3lyfktnc81m" path="res://scenes/player/weapon.tscn" id="3_16xqx"]
-[ext_resource type="PackedScene" uid="uid://w1kcyt72mf44" path="res://scenes/player/summoning.tscn" id="4_jktg6"]
+[ext_resource type="PackedScene" path="res://scenes/player/summoning.tscn" id="4_jktg6"]
 [ext_resource type="Texture2D" uid="uid://j264xp1kc24q" path="res://assets/sprites/player/walk/player_walk.png" id="5_vmp8s"]
 [ext_resource type="Texture2D" uid="uid://b5jkqbip7nb78" path="res://assets/sprites/player/Idle/idle.png" id="6_wme7c"]
+[ext_resource type="AudioStream" uid="uid://c67q6m4cbokik" path="res://assets/sfx/ambient-metal-whoosh.mp3" id="7_cd4kh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_if4v4"]
-radius = 59.0762
+radius = 49.0102
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gmut2"]
-radius = 67.0671
+radius = 58.0086
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jofnb"]
 bg_color = Color(0.254902, 0.254902, 0.254902, 1)
@@ -96,7 +97,6 @@ shape = SubResource("CircleShape2D_gmut2")
 debug_color = Color(0.909804, 0.152941, 0.627451, 0.419608)
 
 [node name="Summoning" parent="." instance=ExtResource("4_jktg6")]
-summon_cooldown = 2.0
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
@@ -106,9 +106,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -89.0
-offset_top = -389.0
+offset_top = -212.5
 offset_right = 89.0
-offset_bottom = -362.0
+offset_bottom = -185.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_jofnb")
@@ -117,13 +117,11 @@ show_percentage = false
 
 [node name="player_walk" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(1.5, -149)
 texture = ExtResource("5_vmp8s")
 hframes = 3
 frame = 2
 
 [node name="player_idle_anim" type="Sprite2D" parent="."]
-position = Vector2(1.5, -149)
 texture = ExtResource("6_wme7c")
 hframes = 2
 
@@ -132,5 +130,8 @@ libraries = {
 "": SubResource("AnimationLibrary_lwbxh")
 }
 autoplay = "player_idle"
+
+[node name="ShootSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_cd4kh")
 
 [connection signal="shoot" from="." to="Weapon" method="_on_player_shoot"]

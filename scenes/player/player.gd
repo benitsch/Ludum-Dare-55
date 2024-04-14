@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var shoot_sfx:AudioStreamPlayer = $ShootSfx
 @export var speed: int = 400
 @export var health: int = 200
 var health_bar = null
@@ -36,6 +37,7 @@ func get_input():
 	# Mouse input
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		shoot.emit()
+		shoot_sfx.play()
 
 func check_hitbox(delta):
 	var overlapping_enemies = %HitBox.get_overlapping_bodies()

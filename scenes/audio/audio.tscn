@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd1f733yee8vc"]
+
+[ext_resource type="Script" path="res://scenes/audio/audio.gd" id="1_cfo8w"]
+[ext_resource type="AudioStream" uid="uid://c67q6m4cbokik" path="res://assets/sfx/ambient-metal-whoosh.mp3" id="2_ie8bp"]
+[ext_resource type="AudioStream" uid="uid://corgdye6mj748" path="res://assets/music/Positive_Day.mp3" id="3_ui7pf"]
+
+[node name="Audio" type="Node2D"]
+script = ExtResource("1_cfo8w")
+
+[node name="ButtonMusic" type="Button" parent="."]
+offset_left = 67.0
+offset_top = 54.0
+offset_right = 179.0
+offset_bottom = 109.0
+text = "Play Music"
+
+[node name="ButtonSfx" type="Button" parent="."]
+offset_left = 208.0
+offset_top = 55.0
+offset_right = 320.0
+offset_bottom = 110.0
+text = "Play Sfx"
+
+[node name="ShootSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ie8bp")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ui7pf")
+volume_db = -10.0
+
+[connection signal="pressed" from="ButtonMusic" to="." method="_on_button_music_pressed"]
+[connection signal="pressed" from="ButtonSfx" to="." method="_on_button_sfx_pressed"]
