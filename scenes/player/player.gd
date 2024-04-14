@@ -1,10 +1,8 @@
 extends CharacterBody2D
 
-
 @export var speed: int = 400
 @export var health: int = 500
 var health_bar = null
-
 var is_alive: bool = true
 
 signal shoot
@@ -20,8 +18,6 @@ func _physics_process(delta):
 	move_and_slide()
 	check_hitbox(delta)
 
-	# TODO add idle & move animation
-
 func get_input():
 	# Keyboard input
 	var direction: Vector2 = Input.get_vector(
@@ -29,7 +25,7 @@ func get_input():
 		"move_right",
 		"move_up",
 		"move_down").normalized()
-	print(direction)
+
 	if direction != Vector2.ZERO:
 		if direction.x == 0:  # Vertikale Bewegung (nach oben oder unten)
 			if direction.y < 0:  # Bewegung nach oben
