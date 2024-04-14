@@ -8,7 +8,7 @@ extends Control
 
 func _ready():
 	back_button.button_down.connect(on_back_pressed)
-	label_souls_statistic.text = "You managed to collect " + str(Autoload.souls) + " souls."
+	label_souls_statistic.text = "You managed to collect " + str(Autoload.souls) + " souls within " + str(Autoload.current_wave) + " waves."
 	AutoloadAudioStreamPlayer.play_menu_music()
 
 func on_back_pressed() -> void:
