@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfw524dqnddcr"]
+[gd_scene load_steps=8 format=3 uid="uid://bfw524dqnddcr"]
 
 [ext_resource type="PackedScene" uid="uid://bn654oondytk5" path="res://scenes/mob/friends/friend.tscn" id="1_ww8r0"]
 [ext_resource type="Script" path="res://scenes/mob/friends/friendly_boulder.gd" id="2_xi4k7"]
-[ext_resource type="Texture2D" uid="uid://xyil7ti26doa" path="res://assets/sprites/friends/Helper03.png" id="3_v6lpi"]
+[ext_resource type="Texture2D" uid="uid://b5b5y63yjm1" path="res://assets/sprites/friends/helper03/helper03_walk.png" id="4_pptm2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1tkpo"]
 resource_local_to_scene = true
@@ -11,6 +11,29 @@ radius = 70.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_4hdnk"]
 resource_local_to_scene = true
 radius = 85.0
+
+[sub_resource type="Animation" id="Animation_7dwvs"]
+resource_name = "friend_03_walk"
+length = 0.666675
+loop_mode = 1
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("friend_03_walk:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3l8ic"]
+_data = {
+"friend_03_walk": SubResource("Animation_7dwvs")
+}
 
 [node name="FriendlyStone" instance=ExtResource("1_ww8r0")]
 script = ExtResource("2_xi4k7")

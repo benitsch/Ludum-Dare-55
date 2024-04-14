@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bdmagbg845cp5" path="res://scenes/player/player.tscn" id="1_fwwm0"]
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_t21ss"]
-[ext_resource type="PackedScene" uid="uid://nwxhsbyioma1" path="res://scenes/main/enemy_spawner.tscn" id="5_ldowl"]
+[ext_resource type="PackedScene" path="res://scenes/main/enemy_spawner.tscn" id="5_ldowl"]
 [ext_resource type="PackedScene" uid="uid://5ohp2aqmlc48" path="res://scenes/ui/hud/hud.tscn" id="6_xvdfk"]
 [ext_resource type="AudioStream" uid="uid://corgdye6mj748" path="res://assets/music/Positive_Day.mp3" id="7_p8a7m"]
 

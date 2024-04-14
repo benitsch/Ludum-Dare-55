@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bdmagbg845cp5" path="res://scenes/player/player.tscn" id="1_jqy7h"]
 [ext_resource type="PackedScene" uid="uid://yqr883qosq3l" path="res://scenes/mob/enemies/stone.tscn" id="3_8s6vl"]
 [ext_resource type="PackedScene" uid="uid://dnq8uv3hc8tqp" path="res://scenes/mob/enemies/pebble.tscn" id="3_txywr"]
-[ext_resource type="PackedScene" uid="uid://bvc2q7u51edmn" path="res://scenes/mob/enemies/boulder.tscn" id="4_vhvlg"]
+[ext_resource type="PackedScene" uid="uid://cs3e51epdiqn" path="res://scenes/mob/enemies/boulder.tscn" id="4_vhvlg"]
 
 [node name="SummonTest" type="Node2D"]
 
