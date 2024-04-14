@@ -12,6 +12,7 @@ var damage: int = 10
 var speed: int = 100
 var attack_speed: float = 3.0
 var last_attack_time: float = 0.0
+var player_direction: Vector2 = Vector2.ZERO
 
 func _init():
 	health = initial_health
