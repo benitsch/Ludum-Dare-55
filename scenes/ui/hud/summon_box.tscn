@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b06lhoefxsq4n" path="res://assets/sprites/ui/Card.png" id="2_jth07"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2rcl"]
-bg_color = Color(0, 0, 0, 0.392157)
+bg_color = Color(0, 0, 0, 0)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -35,6 +35,19 @@ offset_right = -769.0
 offset_bottom = 176.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_d2rcl")
+
+[node name="TextureRect" type="TextureRect" parent="Container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -23.0
+offset_right = 16.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jth07")
 
 [node name="TextureRectFriend" type="TextureRect" parent="Container"]
 unique_name_in_owner = true
@@ -72,19 +85,6 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 24
 text = "3"
 horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Container"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -10.0
-offset_top = -23.0
-offset_right = 11.0
-offset_bottom = 23.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_jth07")
 
 [node name="SummonLabel" type="Label" parent="Container"]
 unique_name_in_owner = true

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c3pned356mea" path="res://assets/sprites/ui/Souls.png" id="2_tgwcs"]
 [ext_resource type="PackedScene" uid="uid://bfm6hxasht1pk" path="res://scenes/ui/hud/summon_box.tscn" id="3_lw58o"]
 [ext_resource type="Texture2D" uid="uid://cabfwytsotmsy" path="res://assets/sprites/friends/Helper01.png" id="4_3wacb"]
-[ext_resource type="Texture2D" uid="uid://bviv81xbholqc" path="res://assets/sprites/ui/SummoningButton.png" id="4_aqc77"]
+[ext_resource type="Texture2D" uid="uid://7kcyvt3xgqp3" path="res://assets/sprites/ui/SummoningButton.png" id="4_aqc77"]
 [ext_resource type="Texture2D" uid="uid://b8a5wl4x2xgj1" path="res://assets/sprites/friends/Helper02.png" id="5_mj33g"]
 [ext_resource type="Texture2D" uid="uid://xyil7ti26doa" path="res://assets/sprites/friends/Helper03.png" id="6_bn5md"]
 
@@ -40,17 +40,18 @@ metadata/_edit_group_ = true
 
 [node name="TextureRect" type="TextureRect" parent="SoulsInfoBox"]
 layout_mode = 0
-offset_left = 17.0
-offset_top = 14.0
-offset_right = 153.0
-offset_bottom = 169.0
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 166.726
+offset_bottom = 161.0
 texture = ExtResource("2_tgwcs")
+expand_mode = 3
 
 [node name="SoulsLabel" type="Label" parent="SoulsInfoBox"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 8.0
-offset_top = 98.0
+offset_top = 110.0
 offset_right = 159.0
 offset_bottom = 143.0
 theme_override_font_sizes/font_size = 32
