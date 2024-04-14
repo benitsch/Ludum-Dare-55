@@ -59,7 +59,7 @@ func spawnEnemies(enemyList, count, defer):
 func spawnEnemy(enemyType, defer):
 	# Zufälligen Punkt rund um den Spieler berechnen
 	var playerPosition = player.global_position
-	var spawnRadius = 500  # Radius, in dem Feinde spawnen sollen
+	var spawnRadius = 1500  # Radius, in dem Feinde spawnen sollen
 	var spawnAngle = randf_range(0, 2 * PI)  # Zufälliger Winkel
 	var spawnOffset = Vector2(cos(spawnAngle), sin(spawnAngle)) * spawnRadius
 	var spawnPosition = playerPosition + spawnOffset
