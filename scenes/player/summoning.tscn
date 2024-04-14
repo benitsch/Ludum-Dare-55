@@ -12,9 +12,3 @@ script = ExtResource("1_bievt")
 modulate = Color(1, 0, 0, 1)
 scale = Vector2(0.01, 0.01)
 texture = ExtResource("2_j3k0a")
-
-[node name="Timer" type="Timer" parent="."]
-one_shot = true
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

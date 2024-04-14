@@ -12,13 +12,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):	
-	if $Timer.time_left == 0:
+	if not Autoload.is_summoning:
 		if Input.is_action_pressed("spawn_n1"):
-			start_summoning(0)
+			start_summoning(0, Autoload.spawn_F1)
 		elif Input.is_action_pressed("spawn_n2"):
-			start_summoning(1)
+			start_summoning(1, Autoload.spawn_F2)
 		elif Input.is_action_pressed("spawn_n3"):
-			start_summoning(2)
+			start_summoning(2, Autoload.spawn_F3)
 		
 	var new_rotation = rotation_degrees + rotation_speed * delta
 	if new_rotation > 1:
@@ -26,9 +26,13 @@ func _process(delta):
 	
 	rotation_degrees = new_rotation 
 
-func start_summoning(summonType: int):
+func start_summoning(summonType: int, summonCost: int):
+	if Autoload.souls < summonCost:
+		return
+	
+	Autoload.is_summoning = true
+	Autoload.souls -= summonCost
 	var cast = summon_cast.instantiate()
 	cast.spawnIndex = summonType
 	cast.position = $SummoningPoint.global_position
 	$"..".get_parent().add_child(cast)
-	$Timer.start(summon_cooldown)
