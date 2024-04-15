@@ -46,7 +46,6 @@ shape = SubResource("CircleShape2D_rm2a1")
 shape = SubResource("CircleShape2D_1mrx5")
 
 [node name="Visuals" type="Sprite2D" parent="." index="4"]
-visible = false
 position = Vector2(0, -130)
 texture = ExtResource("3_vrr7a")
 
