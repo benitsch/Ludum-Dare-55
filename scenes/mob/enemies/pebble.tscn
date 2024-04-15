@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnq8uv3hc8tqp"]
+[gd_scene load_steps=9 format=3 uid="uid://dnq8uv3hc8tqp"]
 
 [ext_resource type="PackedScene" uid="uid://dwqpakwaa7jsf" path="res://scenes/mob/enemies/enemy.tscn" id="1_wtgip"]
 [ext_resource type="Script" path="res://scenes/mob/enemies/pebble.gd" id="2_1t2wc"]
 [ext_resource type="Texture2D" uid="uid://vnoy8468nxip" path="res://assets/sprites/enemy/Enemy01.png" id="3_2bs71"]
+[ext_resource type="Texture2D" uid="uid://e65b27q43ohh" path="res://assets/sprites/enemy/enemy01/spritesheet.png" id="4_u5lk0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ilyyq"]
 resource_local_to_scene = true
@@ -11,6 +12,29 @@ radius = 40.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_vfkrl"]
 resource_local_to_scene = true
 radius = 50.0
+
+[sub_resource type="Animation" id="Animation_7dwvs"]
+resource_name = "enemy_01_walk"
+length = 0.666675
+loop_mode = 1
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("enemy_01_walk:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3l8ic"]
+_data = {
+"enemy_01_walk": SubResource("Animation_7dwvs")
+}
 
 [node name="Pebble" instance=ExtResource("1_wtgip")]
 position = Vector2(2, 1)
@@ -23,5 +47,17 @@ shape = SubResource("CircleShape2D_ilyyq")
 shape = SubResource("CircleShape2D_vfkrl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="3"]
+visible = false
 position = Vector2(2, -41)
 texture = ExtResource("3_2bs71")
+
+[node name="enemy_01_walk" type="Sprite2D" parent="." index="4"]
+position = Vector2(-2, -38)
+texture = ExtResource("4_u5lk0")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+libraries = {
+"": SubResource("AnimationLibrary_3l8ic")
+}
+autoplay = "enemy_01_walk"
