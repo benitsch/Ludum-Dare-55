@@ -4,7 +4,8 @@ extends Area2D
 
 var failure_sounds = []
 var puff_sound = preload("res://assets/sfx/puff.mp3")
-var fail2_sound = preload("res://assets/sfx/fail2.mp3")
+var oh_no_sound = preload("res://assets/sfx/oh_no.mp3")
+var not_again_sound = preload("res://assets/sfx/not_again.mp3")
 
 var success_summon_sound = preload("res://assets/sfx/summon.mp3")
 
@@ -23,7 +24,10 @@ signal spawn_friend(spawn_position, friend_index)
 
 func _ready():
 	failure_sounds.append(puff_sound)
-	failure_sounds.append(fail2_sound)
+	failure_sounds.append(oh_no_sound)
+	failure_sounds.append(puff_sound)
+	failure_sounds.append(not_again_sound)
+	failure_sounds.append(puff_sound)
 	
 	var offset: Vector2 = Vector2.ZERO
 	offset.x = randf_range(-1, 1)
