@@ -1,9 +1,305 @@
-[gd_scene load_steps=3 format=3 uid="uid://capk1yb3q83rx"]
+[gd_scene load_steps=10 format=3 uid="uid://capk1yb3q83rx"]
 
+[ext_resource type="Texture2D" uid="uid://dkfr4s5cgpjxp" path="res://assets/sprites/Square.png" id="1_b0g3c"]
 [ext_resource type="PackedScene" uid="uid://bdmagbg845cp5" path="res://scenes/player/player.tscn" id="1_lp7ri"]
+[ext_resource type="Texture2D" uid="uid://bupy1kwavj6nx" path="res://assets/sprites/ui/TutorialPaperBackground.png" id="2_6ytbq"]
 [ext_resource type="PackedScene" uid="uid://5ohp2aqmlc48" path="res://scenes/ui/hud/hud.tscn" id="2_ka634"]
+[ext_resource type="Texture2D" uid="uid://c5v7c7tt3o6m3" path="res://assets/sprites/player/Player01.png" id="3_jddj4"]
+[ext_resource type="Texture2D" uid="uid://c3pned356mea" path="res://assets/sprites/ui/Souls.png" id="4_7f4p3"]
+[ext_resource type="Texture2D" uid="uid://vnoy8468nxip" path="res://assets/sprites/enemy/Enemy01.png" id="5_hotyn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o2xxg"]
+bg_color = Color(0.254902, 0.254902, 0.254902, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0iut8"]
+bg_color = Color(0.647059, 0.827451, 0.760784, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.141176, 0.0313726, 0.231373, 1)
+shadow_size = 5
+shadow_offset = Vector2(3, 3)
 
 [node name="Tutorial" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.580392, 0.580392, 0.580392, 1)
+z_index = -50
+texture_repeat = 2
+texture = ExtResource("1_b0g3c")
+region_enabled = true
+region_rect = Rect2(0, 0, 5000, 2500)
+
+[node name="Intro" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 550.0
+offset_top = -121.0
+offset_right = 550.0
+offset_bottom = -121.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TutBack1" type="TextureRect" parent="Intro"]
+layout_mode = 2
+offset_right = 1107.0
+offset_bottom = 918.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+texture = ExtResource("2_6ytbq")
+
+[node name="TutBack2" type="TextureRect" parent="Intro"]
+layout_mode = 2
+offset_right = 1107.0
+offset_bottom = 918.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+texture = ExtResource("2_6ytbq")
+
+[node name="Controlls" type="Label" parent="Intro"]
+layout_mode = 2
+offset_left = -912.0
+offset_top = -649.0
+offset_right = -212.0
+offset_bottom = -449.0
+theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
+theme_override_font_sizes/font_size = 50
+text = "To control Shay use the WASD keys"
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Intro"]
+layout_mode = 0
+offset_left = -292.0
+offset_top = -779.0
+offset_right = 53.0
+offset_bottom = -361.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_jddj4")
+
+[node name="Hint" type="Label" parent="Intro"]
+offset_left = -912.0
+offset_top = -400.0
+offset_right = -212.0
+offset_bottom = -150.0
+theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
+theme_override_font_sizes/font_size = 50
+text = "Keep an eye on your Health. When it is empty you will be brought back to savety."
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="HealthBar" type="ProgressBar" parent="Intro"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -306.0
+offset_top = -230.0
+offset_right = -128.0
+offset_bottom = -203.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_o2xxg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0iut8")
+value = 25.0
+show_percentage = false
+
+[node name="Next" type="Label" parent="Intro"]
+offset_left = -220.0
+offset_top = -156.0
+offset_right = -120.0
+offset_bottom = -81.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.282353)
+theme_override_font_sizes/font_size = 50
+text = ">>>"
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="Souls" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2261.0
+offset_top = -137.0
+offset_right = 2261.0
+offset_bottom = -137.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TutBack1" type="TextureRect" parent="Souls"]
+layout_mode = 2
+offset_right = 1107.0
+offset_bottom = 918.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+texture = ExtResource("2_6ytbq")
+
+[node name="TutBack2" type="TextureRect" parent="Souls"]
+layout_mode = 2
+offset_right = 1107.0
+offset_bottom = 918.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+texture = ExtResource("2_6ytbq")
+
+[node name="Hud" type="Label" parent="Souls"]
+layout_mode = 2
+offset_left = -912.0
+offset_top = -649.0
+offset_right = -212.0
+offset_bottom = -449.0
+theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
+theme_override_font_sizes/font_size = 50
+text = "Your goal is to collect as many souls as possible."
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Souls"]
+layout_mode = 0
+offset_left = -292.0
+offset_top = -779.0
+offset_right = 53.0
+offset_bottom = -361.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_7f4p3")
+
+[node name="Hint" type="Label" parent="Souls"]
+offset_left = -912.0
+offset_top = -400.0
+offset_right = -212.0
+offset_bottom = -75.0
+theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
+theme_override_font_sizes/font_size = 50
+text = "You gain 1 soul for every hostile golem defeted. The current amount is displayed in the top right corner."
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="TextureRect4" type="TextureRect" parent="Souls"]
+modulate = Color(1, 1, 1, 0.537255)
+layout_mode = 0
+offset_left = -270.0
+offset_top = -491.0
+offset_right = 75.0
+offset_bottom = -73.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_hotyn")
+
+[node name="Next2" type="Label" parent="Souls/TextureRect4"]
+offset_left = 252.0
+offset_top = 302.0
+offset_right = 352.0
+offset_bottom = 377.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.282353)
+theme_override_font_sizes/font_size = 50
+text = "bad"
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="Next" type="Label" parent="Souls"]
+offset_left = -220.0
+offset_top = -156.0
+offset_right = -120.0
+offset_bottom = -81.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.282353)
+theme_override_font_sizes/font_size = 50
+text = ">>>"
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="Fighting" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4052.0
+offset_top = -159.0
+offset_right = 4052.0
+offset_bottom = -159.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TutBack1" type="TextureRect" parent="Fighting"]
+layout_mode = 2
+offset_right = 1107.0
+offset_bottom = 918.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+texture = ExtResource("2_6ytbq")
+
+[node name="TutBack2" type="TextureRect" parent="Fighting"]
+layout_mode = 2
+offset_right = 1107.0
+offset_bottom = 918.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+texture = ExtResource("2_6ytbq")
+
+[node name="Hud" type="Label" parent="Fighting"]
+layout_mode = 2
+offset_left = -912.0
+offset_top = -649.0
+offset_right = -212.0
+offset_bottom = -449.0
+theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
+theme_override_font_sizes/font_size = 50
+text = "Your goal is to collect as many souls as possible."
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Fighting"]
+layout_mode = 0
+offset_left = -292.0
+offset_top = -779.0
+offset_right = 53.0
+offset_bottom = -361.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_7f4p3")
+
+[node name="Hint" type="Label" parent="Fighting"]
+offset_left = -912.0
+offset_top = -400.0
+offset_right = -212.0
+offset_bottom = -75.0
+theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
+theme_override_font_sizes/font_size = 50
+text = "You gain 1 soul for every hostile golem defeted. The current amount is displayed in the top right corner."
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="Next" type="Label" parent="Fighting"]
+offset_left = -220.0
+offset_top = -156.0
+offset_right = -120.0
+offset_bottom = -81.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.282353)
+theme_override_font_sizes/font_size = 50
+text = ">>>"
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
 
 [node name="Hud" parent="." instance=ExtResource("2_ka634")]
 
