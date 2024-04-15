@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var initial_speed: int = 400
 @export var initial_health: int = 500
+@export var tutorial: bool = false
 var speed: int
 var health: int 
 var health_bar = null
@@ -22,7 +23,8 @@ func _physics_process(delta):
 	get_input()
 	move_and_slide()
 	check_hitbox(delta)
-	check_position_distance(delta)
+	if not tutorial:
+		check_position_distance(delta)
 
 func get_input():
 	# Keyboard input

@@ -1,12 +1,32 @@
-[gd_scene load_steps=10 format=3 uid="uid://capk1yb3q83rx"]
+[gd_scene load_steps=28 format=3 uid="uid://capk1yb3q83rx"]
 
 [ext_resource type="Texture2D" uid="uid://dkfr4s5cgpjxp" path="res://assets/sprites/Square.png" id="1_b0g3c"]
+[ext_resource type="Script" path="res://scenes/main/tutorial.gd" id="1_eioo7"]
 [ext_resource type="PackedScene" uid="uid://bdmagbg845cp5" path="res://scenes/player/player.tscn" id="1_lp7ri"]
 [ext_resource type="Texture2D" uid="uid://bupy1kwavj6nx" path="res://assets/sprites/ui/TutorialPaperBackground.png" id="2_6ytbq"]
 [ext_resource type="PackedScene" uid="uid://5ohp2aqmlc48" path="res://scenes/ui/hud/hud.tscn" id="2_ka634"]
 [ext_resource type="Texture2D" uid="uid://c5v7c7tt3o6m3" path="res://assets/sprites/player/Player01.png" id="3_jddj4"]
+[ext_resource type="Texture2D" uid="uid://q07rcflaoqt6" path="res://assets/sprites/ui/WASDButtons.png" id="4_1a6if"]
 [ext_resource type="Texture2D" uid="uid://c3pned356mea" path="res://assets/sprites/ui/Souls.png" id="4_7f4p3"]
 [ext_resource type="Texture2D" uid="uid://vnoy8468nxip" path="res://assets/sprites/enemy/Enemy01.png" id="5_hotyn"]
+[ext_resource type="Texture2D" uid="uid://dsryrmul2820c" path="res://assets/sprites/ui/Crosshairs.png" id="7_e5k8x"]
+[ext_resource type="Texture2D" uid="uid://fdwgaj6fb33w" path="res://assets/sprites/ui/LeftMouseButton.png" id="8_g5poa"]
+[ext_resource type="Texture2D" uid="uid://0k7pk3xi4w8" path="res://assets/sprites/enemy/Enemy02.png" id="9_g3gfg"]
+[ext_resource type="Texture2D" uid="uid://txibeupndrj4" path="res://assets/sprites/enemy/Enemy03.png" id="10_b6joc"]
+[ext_resource type="Texture2D" uid="uid://cabfwytsotmsy" path="res://assets/sprites/friends/Helper01.png" id="11_aq3j4"]
+[ext_resource type="Texture2D" uid="uid://b8a5wl4x2xgj1" path="res://assets/sprites/friends/Helper02.png" id="12_u0q1b"]
+[ext_resource type="Texture2D" uid="uid://xyil7ti26doa" path="res://assets/sprites/friends/Helper03.png" id="13_hqs7o"]
+[ext_resource type="Texture2D" uid="uid://cse8ov4juvqey" path="res://assets/sprites/MaficCircle01.png" id="14_5by6y"]
+[ext_resource type="PackedScene" uid="uid://bfm6hxasht1pk" path="res://scenes/ui/hud/summon_box.tscn" id="15_vftr1"]
+[ext_resource type="Texture2D" uid="uid://d27aumuyds2mw" path="res://assets/sprites/ui/ButtonAttack.png" id="16_quae5"]
+[ext_resource type="Texture2D" uid="uid://clymskqsygx8i" path="res://assets/sprites/ui/ButtonHealth.png" id="17_5en8w"]
+[ext_resource type="Texture2D" uid="uid://dujqr5fx13bn3" path="res://assets/sprites/ui/ButtonRegen.png" id="18_asq3g"]
+[ext_resource type="Texture2D" uid="uid://ccgw7ptk7ao5b" path="res://assets/sprites/ui/ButtonSpeed.png" id="19_0l220"]
+[ext_resource type="Texture2D" uid="uid://7kcyvt3xgqp3" path="res://assets/sprites/ui/SummoningButton.png" id="20_p4r1n"]
+[ext_resource type="Texture2D" uid="uid://b0jd60w7slbbq" path="res://assets/sprites/bullet.png" id="21_4tohb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhi4m"]
+size = Vector2(2250, 2250)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o2xxg"]
 bg_color = Color(0.254902, 0.254902, 0.254902, 1)
@@ -26,23 +46,57 @@ shadow_size = 5
 shadow_offset = Vector2(3, 3)
 
 [node name="Tutorial" type="Node2D"]
+script = ExtResource("1_eioo7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.580392, 0.580392, 0.580392, 1)
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 32
+collision_mask = 19
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-14, -7)
+polygon = PackedVector2Array(-991, 496, -989, -497, 8508, -514, 8517, -1248, 11028, -1265, 11034, 1236, 8511, 1247, 8520, 504, -1417, 508, -1436, 1105, 8013, 1219, 7996, 1728, 11483, 1776, 11452, -1711, 8024, -1695, 8024, -1231, -1426, -1158, -1406, 496)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+self_modulate = Color(0.580392, 0.580392, 0.580392, 1)
+z_index = -50
+texture_repeat = 2
+position = Vector2(3750, -5)
+texture = ExtResource("1_b0g3c")
+region_enabled = true
+region_rect = Rect2(0, 0, 9500, 1000)
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D/Sprite2D"]
+self_modulate = Color(0.486275, 0.592157, 0.698039, 1)
+z_index = 10
+texture_repeat = 2
+position = Vector2(-4000, 0)
+texture = ExtResource("1_b0g3c")
+region_rect = Rect2(0, 0, 12000, 1500)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(9750, -5)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_uhi4m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+modulate = Color(0.992157, 0.72549, 0.490196, 1)
+self_modulate = Color(0.580392, 0.580392, 0.580392, 1)
 z_index = -50
 texture_repeat = 2
 texture = ExtResource("1_b0g3c")
 region_enabled = true
-region_rect = Rect2(0, 0, 5000, 2500)
+region_rect = Rect2(0, 0, 2500, 2500)
 
 [node name="Intro" type="Panel" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 550.0
-offset_top = -121.0
-offset_right = 550.0
-offset_bottom = -121.0
+offset_left = 259.0
+offset_top = -376.0
+offset_right = 259.0
+offset_bottom = -376.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -85,8 +139,22 @@ offset_right = 53.0
 offset_bottom = -361.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_jddj4")
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="Intro"]
+modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 0
+offset_left = -587.0
+offset_top = -587.0
+offset_right = -242.0
+offset_bottom = -169.0
+rotation = 0.246182
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_1a6if")
+stretch_mode = 4
 
 [node name="Hint" type="Label" parent="Intro"]
+layout_mode = 0
 offset_left = -912.0
 offset_top = -400.0
 offset_right = -212.0
@@ -100,6 +168,7 @@ text_overrun_behavior = 2
 
 [node name="HealthBar" type="ProgressBar" parent="Intro"]
 unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.588235)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -118,6 +187,7 @@ value = 25.0
 show_percentage = false
 
 [node name="Next" type="Label" parent="Intro"]
+layout_mode = 0
 offset_left = -220.0
 offset_top = -156.0
 offset_right = -120.0
@@ -133,10 +203,10 @@ text_overrun_behavior = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2261.0
-offset_top = -137.0
-offset_right = 2261.0
-offset_bottom = -137.0
+offset_left = 1728.0
+offset_top = -369.0
+offset_right = 1728.0
+offset_bottom = -369.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -173,14 +243,16 @@ text_overrun_behavior = 2
 
 [node name="TextureRect3" type="TextureRect" parent="Souls"]
 layout_mode = 0
-offset_left = -292.0
-offset_top = -779.0
-offset_right = 53.0
-offset_bottom = -361.0
+offset_left = -345.0
+offset_top = -836.0
+offset_right = 155.0
+offset_bottom = -336.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_7f4p3")
+stretch_mode = 4
 
 [node name="Hint" type="Label" parent="Souls"]
+layout_mode = 0
 offset_left = -912.0
 offset_top = -400.0
 offset_right = -212.0
@@ -195,18 +267,20 @@ text_overrun_behavior = 2
 [node name="TextureRect4" type="TextureRect" parent="Souls"]
 modulate = Color(1, 1, 1, 0.537255)
 layout_mode = 0
-offset_left = -270.0
-offset_top = -491.0
-offset_right = 75.0
-offset_bottom = -73.0
+offset_left = -249.0
+offset_top = -417.0
+offset_right = 1.0
+offset_bottom = -167.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_hotyn")
+stretch_mode = 4
 
 [node name="Next2" type="Label" parent="Souls/TextureRect4"]
-offset_left = 252.0
-offset_top = 302.0
-offset_right = 352.0
-offset_bottom = 377.0
+layout_mode = 0
+offset_left = 196.0
+offset_top = 200.0
+offset_right = 296.0
+offset_bottom = 275.0
 theme_override_colors/font_color = Color(0, 0, 0, 0.282353)
 theme_override_font_sizes/font_size = 50
 text = "bad"
@@ -215,6 +289,7 @@ clip_text = true
 text_overrun_behavior = 2
 
 [node name="Next" type="Label" parent="Souls"]
+layout_mode = 0
 offset_left = -220.0
 offset_top = -156.0
 offset_right = -120.0
@@ -230,10 +305,10 @@ text_overrun_behavior = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 4052.0
-offset_top = -159.0
-offset_right = 4052.0
-offset_bottom = -159.0
+offset_left = 3276.0
+offset_top = -346.0
+offset_right = 3276.0
+offset_bottom = -346.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -260,36 +335,583 @@ layout_mode = 2
 offset_left = -912.0
 offset_top = -649.0
 offset_right = -212.0
-offset_bottom = -449.0
+offset_bottom = -399.0
 theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
 theme_override_font_sizes/font_size = 50
-text = "Your goal is to collect as many souls as possible."
+text = "Fight enemies by targeting them with your spell.
+Cast it with LMB."
 autowrap_mode = 2
 clip_text = true
 text_overrun_behavior = 2
 
 [node name="TextureRect3" type="TextureRect" parent="Fighting"]
 layout_mode = 0
-offset_left = -292.0
-offset_top = -779.0
-offset_right = 53.0
-offset_bottom = -361.0
+offset_left = -301.0
+offset_top = -802.0
+offset_right = 49.0
+offset_bottom = -452.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_7f4p3")
+texture = ExtResource("7_e5k8x")
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="Fighting"]
+modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 0
+offset_left = -481.0
+offset_top = -503.0
+offset_right = -263.0
+offset_bottom = -282.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_g5poa")
+stretch_mode = 4
 
 [node name="Hint" type="Label" parent="Fighting"]
+layout_mode = 0
 offset_left = -912.0
 offset_top = -400.0
 offset_right = -212.0
 offset_bottom = -75.0
 theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
 theme_override_font_sizes/font_size = 50
-text = "You gain 1 soul for every hostile golem defeted. The current amount is displayed in the top right corner."
+text = "They will come at you in waves. Current wave and time until next wave is displayed at the top."
 autowrap_mode = 2
 clip_text = true
 text_overrun_behavior = 2
 
+[node name="TextureRect5" type="TextureRect" parent="Fighting"]
+modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 0
+offset_left = -263.0
+offset_top = -262.0
+offset_right = -63.0
+offset_bottom = -12.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_hotyn")
+stretch_mode = 4
+
+[node name="TextureRect6" type="TextureRect" parent="Fighting"]
+modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 0
+offset_left = -210.0
+offset_top = -218.0
+offset_right = -10.0
+offset_bottom = 32.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_hotyn")
+stretch_mode = 4
+
+[node name="TextureRect7" type="TextureRect" parent="Fighting"]
+modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 0
+offset_left = -212.0
+offset_top = -347.0
+offset_right = -12.0
+offset_bottom = 71.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_g3gfg")
+stretch_mode = 4
+
+[node name="TextureRect8" type="TextureRect" parent="Fighting"]
+modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 0
+offset_left = -153.0
+offset_top = -263.0
+offset_right = 103.0
+offset_bottom = 60.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_b6joc")
+stretch_mode = 4
+
 [node name="Next" type="Label" parent="Fighting"]
+layout_mode = 0
+offset_left = -220.0
+offset_top = -156.0
+offset_right = -120.0
+offset_bottom = -81.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.282353)
+theme_override_font_sizes/font_size = 50
+text = ">>>"
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="Summoning 1" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4881.0
+offset_top = -370.0
+offset_right = 4881.0
+offset_bottom = -370.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TutBack1" type="TextureRect" parent="Summoning 1"]
+layout_mode = 2
+offset_right = 1107.0
+offset_bottom = 918.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+texture = ExtResource("2_6ytbq")
+
+[node name="TutBack2" type="TextureRect" parent="Summoning 1"]
+layout_mode = 2
+offset_right = 1107.0
+offset_bottom = 918.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+texture = ExtResource("2_6ytbq")
+
+[node name="Hud" type="Label" parent="Summoning 1"]
+layout_mode = 2
+offset_left = -912.0
+offset_top = -649.0
+offset_right = -212.0
+offset_bottom = -399.0
+theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
+theme_override_font_sizes/font_size = 50
+text = "You can summon friends to help you defeat the meanie's trying to hurt you."
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Summoning 1"]
+layout_mode = 0
+offset_left = -303.0
+offset_top = -746.0
+offset_right = -103.0
+offset_bottom = -546.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_aq3j4")
+stretch_mode = 4
+flip_h = true
+
+[node name="TextureRect4" type="TextureRect" parent="Summoning 1"]
+layout_mode = 0
+offset_left = -220.0
+offset_top = -828.0
+offset_right = -20.0
+offset_bottom = -488.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_u0q1b")
+stretch_mode = 4
+
+[node name="Hint" type="Label" parent="Summoning 1"]
+layout_mode = 0
+offset_left = -912.0
+offset_top = -400.0
+offset_right = -212.0
+offset_bottom = -75.0
+theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
+theme_override_font_sizes/font_size = 50
+text = "You are only able to summon 1 friend at a time. Once summond they will stay until they get defeated."
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="TextureRect5" type="TextureRect" parent="Summoning 1"]
+modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 0
+offset_left = -243.0
+offset_top = -337.0
+offset_right = 25.0
+offset_bottom = 5.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("13_hqs7o")
+stretch_mode = 4
+flip_h = true
+
+[node name="TextureRect6" type="TextureRect" parent="Summoning 1"]
+modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 0
+offset_left = -162.0
+offset_top = -255.0
+offset_right = 38.0
+offset_bottom = -5.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_hotyn")
+stretch_mode = 4
+
+[node name="Summoning 2" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5818.0
+offset_top = -356.0
+offset_right = 5818.0
+offset_bottom = -356.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TutBack1" type="TextureRect" parent="Summoning 2"]
+layout_mode = 2
+offset_right = 1107.0
+offset_bottom = 918.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+texture = ExtResource("2_6ytbq")
+
+[node name="TutBack2" type="TextureRect" parent="Summoning 2"]
+layout_mode = 2
+offset_right = 1107.0
+offset_bottom = 918.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+texture = ExtResource("2_6ytbq")
+
+[node name="Hud" type="Label" parent="Summoning 2"]
+layout_mode = 2
+offset_left = -912.0
+offset_top = -649.0
+offset_right = -212.0
+offset_bottom = -399.0
+theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
+theme_override_font_sizes/font_size = 50
+text = "Start the summoning by pressing 1, 2 or 3 to select the type of friend you want."
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Summoning 2"]
+layout_mode = 0
+offset_left = -289.0
+offset_top = -730.0
+offset_right = 61.0
+offset_bottom = -530.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_5by6y")
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="Summoning 2"]
+modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 0
+offset_left = -255.0
+offset_top = -752.0
+offset_right = -37.0
+offset_bottom = -531.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("11_aq3j4")
+stretch_mode = 4
+
+[node name="Hint" type="Label" parent="Summoning 2"]
+layout_mode = 0
+offset_left = -912.0
+offset_top = -400.0
+offset_right = -212.0
+offset_bottom = -75.0
+theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
+theme_override_font_sizes/font_size = 50
+text = "Summoning isn't easy and is fueled by the souls you have collected. View the costs in the top right corner."
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="SummonBox" parent="Summoning 2" instance=ExtResource("15_vftr1")]
+layout_mode = 1
+offset_left = 229.0
+offset_top = -290.0
+offset_right = 229.0
+offset_bottom = -290.0
+scale = Vector2(0.5, 0.5)
+
+[node name="Summoning 3" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6753.0
+offset_top = -353.0
+offset_right = 6753.0
+offset_bottom = -353.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TutBack1" type="TextureRect" parent="Summoning 3"]
+layout_mode = 2
+offset_right = 1107.0
+offset_bottom = 918.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+texture = ExtResource("2_6ytbq")
+
+[node name="TutBack2" type="TextureRect" parent="Summoning 3"]
+layout_mode = 2
+offset_right = 1107.0
+offset_bottom = 918.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+texture = ExtResource("2_6ytbq")
+
+[node name="Hud" type="Label" parent="Summoning 3"]
+layout_mode = 2
+offset_left = -912.0
+offset_top = -649.0
+offset_right = -212.0
+offset_bottom = -399.0
+theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
+theme_override_font_sizes/font_size = 50
+text = "While summoning a friend you can give him 5 buffs using the ARROW KEYS."
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Summoning 3"]
+layout_mode = 0
+offset_left = -289.0
+offset_top = -730.0
+offset_right = 61.0
+offset_bottom = -530.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_5by6y")
+stretch_mode = 4
+
+[node name="TextureRect5" type="TextureRect" parent="Summoning 3/TextureRect3"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 6.0
+offset_right = 308.0
+offset_bottom = 206.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("16_quae5")
+stretch_mode = 4
+
+[node name="TextureRect6" type="TextureRect" parent="Summoning 3/TextureRect3"]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 38.0
+offset_right = 382.0
+offset_bottom = 238.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("17_5en8w")
+stretch_mode = 4
+
+[node name="TextureRect7" type="TextureRect" parent="Summoning 3/TextureRect3"]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 86.0
+offset_right = 358.0
+offset_bottom = 286.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("18_asq3g")
+stretch_mode = 4
+
+[node name="TextureRect8" type="TextureRect" parent="Summoning 3/TextureRect3"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 84.0
+offset_right = 262.0
+offset_bottom = 284.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("19_0l220")
+stretch_mode = 4
+
+[node name="TextureRect9" type="TextureRect" parent="Summoning 3/TextureRect3"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 22.0
+offset_right = 238.0
+offset_bottom = 222.0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("16_quae5")
+stretch_mode = 4
+
+[node name="TextureRect6" type="TextureRect" parent="Summoning 3"]
+modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 0
+offset_left = -276.0
+offset_top = -486.0
+offset_right = 48.0
+offset_bottom = -232.0
+rotation = -0.256838
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("20_p4r1n")
+stretch_mode = 4
+
+[node name="Next2" type="Label" parent="Summoning 3/TextureRect6"]
+layout_mode = 0
+offset_left = 115.893
+offset_top = -57.4446
+offset_right = 323.893
+offset_bottom = 17.5554
+rotation = 0.260352
+theme_override_colors/font_color = Color(0, 0, 0, 0.282353)
+theme_override_font_sizes/font_size = 50
+text = "stronger"
+
+[node name="Next3" type="Label" parent="Summoning 3/TextureRect6"]
+layout_mode = 0
+offset_left = -88.7119
+offset_top = 219.671
+offset_right = 71.2881
+offset_bottom = 294.671
+rotation = -1.07849
+theme_override_colors/font_color = Color(0, 0, 0, 0.282353)
+theme_override_font_sizes/font_size = 50
+text = "faster"
+
+[node name="Next4" type="Label" parent="Summoning 3/TextureRect6"]
+layout_mode = 0
+offset_left = 362.064
+offset_top = 97.6767
+offset_right = 522.064
+offset_bottom = 172.677
+rotation = 1.12098
+theme_override_colors/font_color = Color(0, 0, 0, 0.282353)
+theme_override_font_sizes/font_size = 50
+text = "better"
+
+[node name="Next5" type="Label" parent="Summoning 3/TextureRect6"]
+layout_mode = 0
+offset_left = 138.41
+offset_top = 191.439
+offset_right = 303.41
+offset_bottom = 266.439
+rotation = 0.53789
+theme_override_colors/font_color = Color(0, 0, 0, 0.282353)
+theme_override_font_sizes/font_size = 50
+text = "harder"
+
+[node name="Hint" type="Label" parent="Summoning 3"]
+layout_mode = 0
+offset_left = -912.0
+offset_top = -400.0
+offset_right = -212.0
+offset_bottom = -75.0
+theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
+theme_override_font_sizes/font_size = 50
+text = "Once you started buffing you need to apply excatly 5 buffs or the summoning will fail."
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="Next" type="Label" parent="Summoning 3"]
+layout_mode = 0
+offset_left = -220.0
+offset_top = -156.0
+offset_right = -120.0
+offset_bottom = -81.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.282353)
+theme_override_font_sizes/font_size = 50
+text = ">>>"
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="End" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8303.0
+offset_top = -366.0
+offset_right = 8303.0
+offset_bottom = -366.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TutBack1" type="TextureRect" parent="End"]
+layout_mode = 2
+offset_right = 1107.0
+offset_bottom = 918.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+texture = ExtResource("2_6ytbq")
+
+[node name="TutBack2" type="TextureRect" parent="End"]
+layout_mode = 2
+offset_right = 1107.0
+offset_bottom = 918.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+texture = ExtResource("2_6ytbq")
+
+[node name="Hud" type="Label" parent="End"]
+layout_mode = 2
+offset_left = -912.0
+offset_top = -649.0
+offset_right = -212.0
+offset_bottom = -399.0
+theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
+theme_override_font_sizes/font_size = 50
+text = "Use the are ahead to train your fighting and summoning."
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="TextureRect3" type="TextureRect" parent="End"]
+layout_mode = 0
+offset_left = -441.0
+offset_top = -526.0
+offset_right = -91.0
+offset_bottom = -326.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_5by6y")
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="End"]
+layout_mode = 0
+offset_left = -305.0
+offset_top = -828.0
+offset_right = 45.0
+offset_bottom = -410.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_jddj4")
+stretch_mode = 4
+
+[node name="TextureRect5" type="TextureRect" parent="End"]
+layout_mode = 0
+offset_left = -125.0
+offset_top = -716.0
+offset_right = 225.0
+offset_bottom = -298.0
+rotation = 1.1019
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("21_4tohb")
+stretch_mode = 4
+
+[node name="TextureRect6" type="TextureRect" parent="End"]
+layout_mode = 0
+offset_left = -156.0
+offset_top = -568.0
+offset_right = 194.0
+offset_bottom = -150.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_hotyn")
+stretch_mode = 4
+
+[node name="TextureRect7" type="TextureRect" parent="End"]
+modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 0
+offset_left = -407.0
+offset_top = -547.0
+offset_right = -57.0
+offset_bottom = -129.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11_aq3j4")
+stretch_mode = 4
+
+[node name="Hint" type="Label" parent="End"]
+layout_mode = 0
+offset_left = -912.0
+offset_top = -400.0
+offset_right = -136.0
+offset_bottom = -75.0
+theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
+theme_override_font_sizes/font_size = 50
+text = "While inside the colored zone enemies will start spawning.
+Use ESC to return to Menu."
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="Next" type="Label" parent="End"]
+layout_mode = 0
 offset_left = -220.0
 offset_top = -156.0
 offset_right = -120.0
@@ -304,3 +926,18 @@ text_overrun_behavior = 2
 [node name="Hud" parent="." instance=ExtResource("2_ka634")]
 
 [node name="Player" parent="." instance=ExtResource("1_lp7ri")]
+position = Vector2(-242, 5)
+tutorial = true
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(10750, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="SpawnPoint"]
+texture = ExtResource("14_5by6y")
+
+[node name="Timer" type="Timer" parent="SpawnPoint"]
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="SpawnPoint/Timer" to="." method="_on_timer_timeout"]
