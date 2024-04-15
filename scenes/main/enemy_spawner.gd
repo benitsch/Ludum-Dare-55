@@ -4,8 +4,10 @@ extends Node2D
 @export var mediumEnemies: Array[PackedScene]
 @export var strongEnemies: Array[PackedScene]
 @export var difficultyRandomFactor: float = 0.5
-var wave_spawn_delay: int = 10
 
+var success_wave_sound = preload("res://assets/sfx/yeah.mp3")
+
+var wave_spawn_delay: int = 10
 var baseWeakEnemiesPerWave = 4
 var baseMediumEnemiesPerWave = 2
 var baseStrongEnemiesPerWave = 1
@@ -71,7 +73,7 @@ func spawnEnemy(enemyType, defer):
 
 func _on_timer_timeout():
 	Autoload.current_wave += 1
-	
+	AutoloadAudioStreamPlayer.play_SFX(success_wave_sound)
 	if Autoload.current_wave > 5:
 		$Timer.wait_time = 30
 	elif Autoload.current_wave > 3:

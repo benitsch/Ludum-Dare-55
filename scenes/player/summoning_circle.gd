@@ -2,7 +2,11 @@ extends Area2D
 
 @export var friendsList: Array[PackedScene]
 
+var failure_sounds = []
 var puff_sound = preload("res://assets/sfx/puff.mp3")
+var fail2_sound = preload("res://assets/sfx/fail2.mp3")
+
+var success_summon_sound = preload("res://assets/sfx/summon.mp3")
 
 var spawnIndex: int = -1
 var aspect_values: Array[int] = [0, 0, 0, 0, 0]
@@ -18,6 +22,9 @@ var aspect5: AnimatedSprite2D
 signal spawn_friend(spawn_position, friend_index)
 
 func _ready():
+	failure_sounds.append(puff_sound)
+	failure_sounds.append(fail2_sound)
+	
 	var offset: Vector2 = Vector2.ZERO
 	offset.x = randf_range(-1, 1)
 	offset.y = randf_range(-1, 1)
@@ -88,7 +95,8 @@ func summon_addAspect(aspect_index):
 			pass
 
 func summon_fail():
-	AutoloadAudioStreamPlayer.play_SFX(puff_sound, 15)
+	var randomIdx = randi_range(0, failure_sounds.size() - 1 )
+	AutoloadAudioStreamPlayer.play_SFX(failure_sounds[randomIdx], 15)
 	summon_failed = true
 	animator.pause()
 	$MagicCircle.visible = false
@@ -104,7 +112,8 @@ func summon_mob():
 		mob.position = global_position
 		mob.increase_stats(aspect_values)
 		$"..".add_child(mob)
-
+		AutoloadAudioStreamPlayer.play_SFX(success_summon_sound)
+	
 
 func _on_summon_fail_particle_finished():
 	queue_free()
