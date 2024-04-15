@@ -14,7 +14,10 @@ func _physics_process(delta):
 	if travelled_distance > distance_range:
 		queue_free()
 
-func _on_body_entered(body: Mob):
+func _on_body_entered(body):
+	if not (body is Mob):
+		return
+	
 	queue_free()
 	if body.has_method("receive_damage"):
 		body.receive_damage(damage)
