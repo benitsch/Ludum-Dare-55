@@ -37,18 +37,14 @@ func get_input():
 	if direction != Vector2.ZERO:
 		if direction.x == 0:  # Vertikale Bewegung (nach oben oder unten)
 			if direction.y < 0:  # Bewegung nach oben
-				$player_sprite.flip_h = false
 				$AnimationPlayer.play("player_walk_up")
-			#else:  # Bewegung nach unten
-				#$player_sprite.flip_h = false
-				#$AnimationPlayer.play("player_walk_down")
+			else:  # Bewegung nach unten
+				$AnimationPlayer.play("player_walk")
 		elif direction.y == 0:  # Horizontale Bewegung (nach links oder rechts)
 			if direction.x > 0:  # Bewegung nach rechts
 				$player_sprite.flip_h = false
-				$AnimationPlayer.play("player_walk")
 			else:  # Bewegung nach links
 				$player_sprite.flip_h = true
-				$AnimationPlayer.play("player_walk")
 		#else:  # Diagonale Bewegung
 			#if direction.y < 0:  # Bewegung nach oben
 				#if direction.x > 0:  # Bewegung nach rechts
