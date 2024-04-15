@@ -6,7 +6,7 @@ extends Node2D
 @export var difficultyRandomFactor: float = 0.5
 var wave_spawn_delay: int = 10
 
-var baseWeakEnemiesPerWave = 3
+var baseWeakEnemiesPerWave = 4
 var baseMediumEnemiesPerWave = 2
 var baseStrongEnemiesPerWave = 1
 

@@ -5,14 +5,16 @@ extends Node2D
 @export var rotation_speed: int = 1000
 
 const summon_cast: PackedScene = preload("res://scenes/player/summoning_circle.tscn")
+var active_summon
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$SummoningPoint.position.x = summoning_distance
+	active_summon = null
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):	
-	if not Autoload.is_summoning:
+	if (not Autoload.is_summoning) || (active_summon == null):
 		if Input.is_action_pressed("spawn_n1"):
 			start_summoning(0, Autoload.spawn_F1)
 		elif Input.is_action_pressed("spawn_n2"):
@@ -32,7 +34,7 @@ func start_summoning(summonType: int, summonCost: int):
 	
 	Autoload.is_summoning = true
 	Autoload.souls -= summonCost
-	var cast = summon_cast.instantiate()
-	cast.spawnIndex = summonType
-	cast.position = $SummoningPoint.global_position
-	$"..".get_parent().add_child(cast)
+	active_summon = summon_cast.instantiate()
+	active_summon.spawnIndex = summonType
+	active_summon.position = $SummoningPoint.global_position
+	$"..".get_parent().add_child(active_summon)
