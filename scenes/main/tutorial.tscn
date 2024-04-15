@@ -93,10 +93,10 @@ region_rect = Rect2(0, 0, 2500, 2500)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 259.0
-offset_top = -376.0
-offset_right = 259.0
-offset_bottom = -376.0
+offset_left = 1130.0
+offset_top = 437.0
+offset_right = 1130.0
+offset_bottom = 437.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -126,7 +126,7 @@ offset_right = -212.0
 offset_bottom = -449.0
 theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
 theme_override_font_sizes/font_size = 50
-text = "To control Shay use the WASD keys"
+text = "To control Shay use the WASD keys."
 autowrap_mode = 2
 clip_text = true
 text_overrun_behavior = 2
@@ -161,7 +161,7 @@ offset_right = -212.0
 offset_bottom = -150.0
 theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
 theme_override_font_sizes/font_size = 50
-text = "Keep an eye on your Health. When it is empty you will be brought back to savety."
+text = "Keep an eye on your Health. When it's empty you will be brought back to safety."
 autowrap_mode = 2
 clip_text = true
 text_overrun_behavior = 2
@@ -203,10 +203,10 @@ text_overrun_behavior = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1728.0
-offset_top = -369.0
-offset_right = 1728.0
-offset_bottom = -369.0
+offset_left = 2422.0
+offset_top = 435.0
+offset_right = 2422.0
+offset_bottom = 435.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -236,7 +236,7 @@ offset_right = -212.0
 offset_bottom = -449.0
 theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
 theme_override_font_sizes/font_size = 50
-text = "Your goal is to collect as many souls as possible."
+text = "Your goal is to cleanse as many souls as possible."
 autowrap_mode = 2
 clip_text = true
 text_overrun_behavior = 2
@@ -254,12 +254,12 @@ stretch_mode = 4
 [node name="Hint" type="Label" parent="Souls"]
 layout_mode = 0
 offset_left = -912.0
-offset_top = -400.0
+offset_top = -377.0
 offset_right = -212.0
 offset_bottom = -75.0
 theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
 theme_override_font_sizes/font_size = 50
-text = "You gain 1 soul for every hostile golem defeted. The current amount is displayed in the top right corner."
+text = "You gain 1 soul for every defeted cursed golem. Your current amount is displayed in the top right corner."
 autowrap_mode = 2
 clip_text = true
 text_overrun_behavior = 2
@@ -305,10 +305,10 @@ text_overrun_behavior = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 3276.0
-offset_top = -346.0
-offset_right = 3276.0
-offset_bottom = -346.0
+offset_left = 3794.0
+offset_top = 416.0
+offset_right = 3794.0
+offset_bottom = 416.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -338,8 +338,7 @@ offset_right = -212.0
 offset_bottom = -399.0
 theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
 theme_override_font_sizes/font_size = 50
-text = "Fight enemies by targeting them with your spell.
-Cast it with LMB."
+text = "Cleanse enemies by targeting them with your spell with LMB."
 autowrap_mode = 2
 clip_text = true
 text_overrun_behavior = 2
@@ -373,7 +372,7 @@ offset_right = -212.0
 offset_bottom = -75.0
 theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
 theme_override_font_sizes/font_size = 50
-text = "They will come at you in waves. Current wave and time until next wave is displayed at the top."
+text = "Enemies will come at you in waves. The current wave and time until next wave is visible at the top."
 autowrap_mode = 2
 clip_text = true
 text_overrun_behavior = 2
@@ -435,197 +434,14 @@ autowrap_mode = 2
 clip_text = true
 text_overrun_behavior = 2
 
-[node name="Summoning 1" type="Panel" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 4881.0
-offset_top = -370.0
-offset_right = 4881.0
-offset_bottom = -370.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TutBack1" type="TextureRect" parent="Summoning 1"]
-layout_mode = 2
-offset_right = 1107.0
-offset_bottom = 918.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 3.14159
-texture = ExtResource("2_6ytbq")
-
-[node name="TutBack2" type="TextureRect" parent="Summoning 1"]
-layout_mode = 2
-offset_right = 1107.0
-offset_bottom = 918.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 3.14159
-texture = ExtResource("2_6ytbq")
-
-[node name="Hud" type="Label" parent="Summoning 1"]
-layout_mode = 2
-offset_left = -912.0
-offset_top = -649.0
-offset_right = -212.0
-offset_bottom = -399.0
-theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
-theme_override_font_sizes/font_size = 50
-text = "You can summon friends to help you defeat the meanie's trying to hurt you."
-autowrap_mode = 2
-clip_text = true
-text_overrun_behavior = 2
-
-[node name="TextureRect3" type="TextureRect" parent="Summoning 1"]
-layout_mode = 0
-offset_left = -303.0
-offset_top = -746.0
-offset_right = -103.0
-offset_bottom = -546.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("11_aq3j4")
-stretch_mode = 4
-flip_h = true
-
-[node name="TextureRect4" type="TextureRect" parent="Summoning 1"]
-layout_mode = 0
-offset_left = -220.0
-offset_top = -828.0
-offset_right = -20.0
-offset_bottom = -488.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("12_u0q1b")
-stretch_mode = 4
-
-[node name="Hint" type="Label" parent="Summoning 1"]
-layout_mode = 0
-offset_left = -912.0
-offset_top = -400.0
-offset_right = -212.0
-offset_bottom = -75.0
-theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
-theme_override_font_sizes/font_size = 50
-text = "You are only able to summon 1 friend at a time. Once summond they will stay until they get defeated."
-autowrap_mode = 2
-clip_text = true
-text_overrun_behavior = 2
-
-[node name="TextureRect5" type="TextureRect" parent="Summoning 1"]
-modulate = Color(1, 1, 1, 0.588235)
-layout_mode = 0
-offset_left = -243.0
-offset_top = -337.0
-offset_right = 25.0
-offset_bottom = 5.0
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("13_hqs7o")
-stretch_mode = 4
-flip_h = true
-
-[node name="TextureRect6" type="TextureRect" parent="Summoning 1"]
-modulate = Color(1, 1, 1, 0.588235)
-layout_mode = 0
-offset_left = -162.0
-offset_top = -255.0
-offset_right = 38.0
-offset_bottom = -5.0
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("5_hotyn")
-stretch_mode = 4
-
-[node name="Summoning 2" type="Panel" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 5818.0
-offset_top = -356.0
-offset_right = 5818.0
-offset_bottom = -356.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TutBack1" type="TextureRect" parent="Summoning 2"]
-layout_mode = 2
-offset_right = 1107.0
-offset_bottom = 918.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 3.14159
-texture = ExtResource("2_6ytbq")
-
-[node name="TutBack2" type="TextureRect" parent="Summoning 2"]
-layout_mode = 2
-offset_right = 1107.0
-offset_bottom = 918.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 3.14159
-texture = ExtResource("2_6ytbq")
-
-[node name="Hud" type="Label" parent="Summoning 2"]
-layout_mode = 2
-offset_left = -912.0
-offset_top = -649.0
-offset_right = -212.0
-offset_bottom = -399.0
-theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
-theme_override_font_sizes/font_size = 50
-text = "Start the summoning by pressing 1, 2 or 3 to select the type of friend you want."
-autowrap_mode = 2
-clip_text = true
-text_overrun_behavior = 2
-
-[node name="TextureRect3" type="TextureRect" parent="Summoning 2"]
-layout_mode = 0
-offset_left = -289.0
-offset_top = -730.0
-offset_right = 61.0
-offset_bottom = -530.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_5by6y")
-stretch_mode = 4
-
-[node name="TextureRect4" type="TextureRect" parent="Summoning 2"]
-modulate = Color(1, 1, 1, 0.588235)
-layout_mode = 0
-offset_left = -255.0
-offset_top = -752.0
-offset_right = -37.0
-offset_bottom = -531.0
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("11_aq3j4")
-stretch_mode = 4
-
-[node name="Hint" type="Label" parent="Summoning 2"]
-layout_mode = 0
-offset_left = -912.0
-offset_top = -400.0
-offset_right = -212.0
-offset_bottom = -75.0
-theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
-theme_override_font_sizes/font_size = 50
-text = "Summoning isn't easy and is fueled by the souls you have collected. View the costs in the top right corner."
-autowrap_mode = 2
-clip_text = true
-text_overrun_behavior = 2
-
-[node name="SummonBox" parent="Summoning 2" instance=ExtResource("15_vftr1")]
-layout_mode = 1
-offset_left = 229.0
-offset_top = -290.0
-offset_right = 229.0
-offset_bottom = -290.0
-scale = Vector2(0.5, 0.5)
-
 [node name="Summoning 3" type="Panel" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 6753.0
-offset_top = -353.0
-offset_right = 6753.0
-offset_bottom = -353.0
+offset_left = 7027.0
+offset_top = 434.0
+offset_right = 7027.0
+offset_bottom = 434.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -784,7 +600,7 @@ offset_right = -212.0
 offset_bottom = -75.0
 theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
 theme_override_font_sizes/font_size = 50
-text = "Once you started buffing you need to apply excatly 5 buffs or the summoning will fail."
+text = "Once you started buffing you need to apply excatly 5 buffs or the summoning will completely fail."
 autowrap_mode = 2
 clip_text = true
 text_overrun_behavior = 2
@@ -802,14 +618,197 @@ autowrap_mode = 2
 clip_text = true
 text_overrun_behavior = 2
 
+[node name="Summoning 2" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6130.0
+offset_top = 431.0
+offset_right = 6130.0
+offset_bottom = 431.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TutBack1" type="TextureRect" parent="Summoning 2"]
+layout_mode = 2
+offset_right = 1107.0
+offset_bottom = 918.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+texture = ExtResource("2_6ytbq")
+
+[node name="TutBack2" type="TextureRect" parent="Summoning 2"]
+layout_mode = 2
+offset_right = 1107.0
+offset_bottom = 918.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+texture = ExtResource("2_6ytbq")
+
+[node name="Hud" type="Label" parent="Summoning 2"]
+layout_mode = 2
+offset_left = -912.0
+offset_top = -649.0
+offset_right = -212.0
+offset_bottom = -399.0
+theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
+theme_override_font_sizes/font_size = 50
+text = "To start the summoning press 1, 2 or 3 to select the type of friend you want."
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Summoning 2"]
+layout_mode = 0
+offset_left = -289.0
+offset_top = -730.0
+offset_right = 61.0
+offset_bottom = -530.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_5by6y")
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="Summoning 2"]
+modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 0
+offset_left = -255.0
+offset_top = -752.0
+offset_right = -37.0
+offset_bottom = -531.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("11_aq3j4")
+stretch_mode = 4
+
+[node name="Hint" type="Label" parent="Summoning 2"]
+layout_mode = 0
+offset_left = -912.0
+offset_top = -400.0
+offset_right = -212.0
+offset_bottom = -75.0
+theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
+theme_override_font_sizes/font_size = 50
+text = "Summoning isn't easy and is fueled by the souls you have collected. View the costs in the top right corner."
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="SummonBox" parent="Summoning 2" instance=ExtResource("15_vftr1")]
+layout_mode = 1
+offset_left = 229.0
+offset_top = -290.0
+offset_right = 229.0
+offset_bottom = -290.0
+scale = Vector2(0.5, 0.5)
+
+[node name="Summoning 1" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5226.0
+offset_top = 417.0
+offset_right = 5226.0
+offset_bottom = 417.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TutBack1" type="TextureRect" parent="Summoning 1"]
+layout_mode = 2
+offset_right = 1107.0
+offset_bottom = 918.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+texture = ExtResource("2_6ytbq")
+
+[node name="TutBack2" type="TextureRect" parent="Summoning 1"]
+layout_mode = 2
+offset_right = 1107.0
+offset_bottom = 918.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+texture = ExtResource("2_6ytbq")
+
+[node name="Hud" type="Label" parent="Summoning 1"]
+layout_mode = 2
+offset_left = -912.0
+offset_top = -649.0
+offset_right = -212.0
+offset_bottom = -399.0
+theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
+theme_override_font_sizes/font_size = 50
+text = "You can summon friends to help you cleanse the meanie's trying to hurt you."
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Summoning 1"]
+layout_mode = 0
+offset_left = -303.0
+offset_top = -746.0
+offset_right = -103.0
+offset_bottom = -546.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_aq3j4")
+stretch_mode = 4
+flip_h = true
+
+[node name="TextureRect4" type="TextureRect" parent="Summoning 1"]
+layout_mode = 0
+offset_left = -220.0
+offset_top = -828.0
+offset_right = -20.0
+offset_bottom = -488.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_u0q1b")
+stretch_mode = 4
+
+[node name="Hint" type="Label" parent="Summoning 1"]
+layout_mode = 0
+offset_left = -912.0
+offset_top = -400.0
+offset_right = -212.0
+offset_bottom = -75.0
+theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
+theme_override_font_sizes/font_size = 50
+text = "You are only able to summon 1 friend at a time. Once summond they will stay until they are defeated."
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="TextureRect5" type="TextureRect" parent="Summoning 1"]
+modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 0
+offset_left = -243.0
+offset_top = -337.0
+offset_right = 25.0
+offset_bottom = 5.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("13_hqs7o")
+stretch_mode = 4
+flip_h = true
+
+[node name="TextureRect6" type="TextureRect" parent="Summoning 1"]
+modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 0
+offset_left = -162.0
+offset_top = -255.0
+offset_right = 38.0
+offset_bottom = -5.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_hotyn")
+stretch_mode = 4
+
 [node name="End" type="Panel" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 8303.0
-offset_top = -366.0
-offset_right = 8303.0
-offset_bottom = -366.0
+offset_left = 8388.0
+offset_top = 421.0
+offset_right = 8388.0
+offset_bottom = 421.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -904,8 +903,9 @@ offset_right = -136.0
 offset_bottom = -75.0
 theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
 theme_override_font_sizes/font_size = 50
-text = "While inside the colored zone enemies will start spawning.
-Use ESC to return to Menu."
+text = "While inside the colored zone simple enemies will  spaw.
+
+Use M to return to Menu."
 autowrap_mode = 2
 clip_text = true
 text_overrun_behavior = 2
