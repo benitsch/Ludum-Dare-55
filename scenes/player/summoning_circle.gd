@@ -2,6 +2,8 @@ extends Area2D
 
 @export var friendsList: Array[PackedScene]
 
+var puff_sound = preload("res://assets/sfx/puff.mp3")
+
 var spawnIndex: int = -1
 var aspect_values: Array[int] = [0, 0, 0, 0, 0]
 var animator: AnimationPlayer
@@ -86,6 +88,7 @@ func summon_addAspect(aspect_index):
 			pass
 
 func summon_fail():
+	AutoloadAudioStreamPlayer.play_SFX(puff_sound, 15)
 	summon_failed = true
 	animator.pause()
 	$MagicCircle.visible = false
