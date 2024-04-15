@@ -41,10 +41,16 @@ func _physics_process(delta):
 		direction = global_position.direction_to(player.global_position)
 		distance = (player.position - position).length() - personal_space
 	
-		if distance < -1:
+		if distance < -20:
 			distance = -1 
-		elif distance > 1:
+		elif distance < -10:
+			distance /= 20
+		elif distance > 20:
 			distance = 1
+		elif distance > 10:
+			distance /= 20
+		else:
+			distance = 0
 	else:
 		direction = Vector2.ZERO
 		distance = 0
