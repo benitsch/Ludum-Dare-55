@@ -41,6 +41,7 @@ func get_input():
 			else:  # Bewegung nach unten
 				$AnimationPlayer.play("player_walk")
 		elif direction.y == 0:  # Horizontale Bewegung (nach links oder rechts)
+			$AnimationPlayer.play("player_walk")
 			if direction.x > 0:  # Bewegung nach rechts
 				$player_sprite.flip_h = false
 			else:  # Bewegung nach links
