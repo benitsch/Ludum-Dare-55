@@ -7,9 +7,7 @@ func _init():
 	damage = 45
 	speed = 350
 	attack_speed = 3.5
-	regeneration = 2
-
-
+	regeneration = 1
 
 func _process(_delta):
 	check_animation()

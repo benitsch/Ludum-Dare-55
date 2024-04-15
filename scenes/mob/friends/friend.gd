@@ -64,8 +64,8 @@ func increase_stats(aspects: Array[int]):
 	
 	damage = damage + damage * aspects[1] 
 	@warning_ignore("integer_division")
-	max_health = max_health + (max_health / 2) * aspects[2]
+	max_health = max_health + 50 * aspects[2]
 	health = max_health
 	speed = speed + 25 * aspects[3]
-	attack_speed = attack_speed - attack_speed * aspects[3] * 10
+	attack_speed = max(attack_speed - (attack_speed * aspects[3] * 20)/100, 0.1)
 	regeneration = regeneration + 1 * aspects[4]
