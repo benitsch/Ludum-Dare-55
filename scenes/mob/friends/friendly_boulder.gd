@@ -2,12 +2,12 @@ extends "res://scenes/mob/friends/friend.gd"
 
 func _init():	
 	super()
-	max_health = 400
+	max_health = 300
 	health = max_health
 	damage = 45
 	speed = 350
 	attack_speed = 3.5
-	regeneration = 1
+	regeneration = 2
 
 func _process(_delta):
 	check_animation()

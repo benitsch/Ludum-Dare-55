@@ -8,9 +8,9 @@ extends Node2D
 var success_wave_sound = preload("res://assets/sfx/yeah.mp3")
 
 var wave_spawn_delay: int = 10
-var baseWeakEnemiesPerWave = 4
-var baseMediumEnemiesPerWave = 2
-var baseStrongEnemiesPerWave = 1
+var baseWeakEnemiesPerWave = 2.5
+var baseMediumEnemiesPerWave = 1.5
+var baseStrongEnemiesPerWave = 0.2
 
 var player = null
 var weakEnemiesList = []
@@ -37,9 +37,9 @@ func spawn_wave(waveNumber, defer = false):
 	var baseStrongCount = waveNumber * baseStrongEnemiesPerWave
 
 	# Wende den Zufallsfaktor auf jede Basisanzahl an
-	var weakCount = int((baseWeakCount * (1.0 + randf() * difficultyRandomFactor)) / 2)
-	var mediumCount = int((baseMediumCount * (1.0 + randf() * difficultyRandomFactor)) / 2)
-	var strongCount = int((baseStrongCount * (1.0 + randf() * difficultyRandomFactor)) / 2)
+	var weakCount = 1 + int((baseWeakCount * (1.0 + randf() * difficultyRandomFactor)) / 1.2)
+	var mediumCount = int((baseMediumCount * (1.0 + randf() * difficultyRandomFactor)) / 1.5)
+	var strongCount = int((baseStrongCount * (1.0 + randf() * difficultyRandomFactor)) / 0.9)
 
 	# Feinde spawnen
 	spawnEnemies(weakEnemies, round(weakCount), defer)
@@ -74,9 +74,9 @@ func spawnEnemy(enemyType, defer):
 func _on_timer_timeout():
 	Autoload.current_wave += 1
 	AutoloadAudioStreamPlayer.play_SFX(success_wave_sound)
-	if Autoload.current_wave > 5:
+	if Autoload.current_wave > 8:
 		$Timer.wait_time = 30
-	elif Autoload.current_wave > 3:
+	elif Autoload.current_wave > 5:
 		$Timer.wait_time = 20
 	elif Autoload.current_wave > 1:
 		$Timer.wait_time = 15

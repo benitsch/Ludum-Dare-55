@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://q07rcflaoqt6" path="res://assets/sprites/ui/WASDButtons.png" id="4_1a6if"]
 [ext_resource type="Texture2D" uid="uid://c3pned356mea" path="res://assets/sprites/ui/Souls.png" id="4_7f4p3"]
 [ext_resource type="Texture2D" uid="uid://vnoy8468nxip" path="res://assets/sprites/enemy/Enemy01.png" id="5_hotyn"]
-[ext_resource type="Texture2D" uid="uid://d0d4yjs6w34yj" path="res://assets/sprites/ui/Crosshairs.png" id="7_e5k8x"]
+[ext_resource type="Texture2D" uid="uid://dsryrmul2820c" path="res://assets/sprites/ui/Crosshairs.png" id="7_e5k8x"]
 [ext_resource type="Texture2D" uid="uid://fdwgaj6fb33w" path="res://assets/sprites/ui/LeftMouseButton.png" id="8_g5poa"]
 [ext_resource type="Texture2D" uid="uid://0k7pk3xi4w8" path="res://assets/sprites/enemy/Enemy02.png" id="9_g3gfg"]
 [ext_resource type="Texture2D" uid="uid://txibeupndrj4" path="res://assets/sprites/enemy/Enemy03.png" id="10_b6joc"]
@@ -838,7 +838,7 @@ offset_right = -212.0
 offset_bottom = -399.0
 theme_override_colors/font_color = Color(0.266667, 0.266667, 0.266667, 1)
 theme_override_font_sizes/font_size = 50
-text = "Use the are ahead to train your fighting and summoning."
+text = "Use the area ahead to train your fighting and summoning."
 autowrap_mode = 2
 clip_text = true
 text_overrun_behavior = 2
