@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@export var initial_speed: int = 400
-@export var initial_health: int = 500
+var initial_speed: int = 400
+var initial_health: int = 500
 @export var tutorial: bool = false
 var speed: int
 var health: int 
@@ -22,7 +22,7 @@ func _ready():
 func _physics_process(delta):
 	get_input()
 	move_and_slide()
-	check_hitbox(delta)
+	check_hitbox()
 	if not tutorial:
 		check_position_distance(delta)
 
@@ -61,28 +61,36 @@ func get_input():
 				#else:  # Bewegung nach links
 					#$player_sprite.flip_h = true
 					#$AnimationPlayer.play("player_walk_diagonal_down_left")
-		velocity = direction * speed
 	else:
-		velocity = Vector2.ZERO
 		$AnimationPlayer.play("player_idle")
+	
+	velocity = direction * speed
 	
 	# Mouse input
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		shoot.emit()
 
-func check_hitbox(delta):
+func check_hitbox():
 	var overlapping_enemies = %HitBox.get_overlapping_bodies()
+	var dmg_to_take = 0
 	if overlapping_enemies.size() > 0:
-		for enemy in overlapping_enemies:
-			enemy.last_attack_time -= delta
-			if enemy.last_attack_time < 0.0:
-				enemy.last_attack_time = enemy.attack_speed
-				receive_damage(enemy.damage)
+		for other in overlapping_enemies:
+			if other.last_attack_time < 0.0:
+				other.last_attack_time = other.attack_speed
+				dmg_to_take += other.damage
+	
+	if dmg_to_take > 0:
+		receive_damage(dmg_to_take)
+	elif speed + 5 < initial_speed:
+		speed += 5
+	elif speed < initial_speed:
+		speed = initial_speed
 
 func receive_damage(dmg):
 	if not is_alive:
 		return
 	
+	speed = int(initial_speed * 0.5)
 	health -= dmg
 	if health > 0 :
 		health_bar.value = health

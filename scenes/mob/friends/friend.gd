@@ -2,18 +2,18 @@ extends "res://scenes/mob/mob.gd"
 
 class_name Friend
 
-@export var personal_space: int = 400
-@export var initial_max_health: int = 150
-@export var initial_regeneration: int = 0
+var personal_space: int = 400
+var initial_max_health: int = 150
+var initial_regeneration: int = 0
 var partial_reg: float = 0
 var enemy_targets: Array[Node2D]
 var target: Node2D
 var max_health: int 
 var regeneration: int
 
-func _init():
+func _ready():
 	super()
-	speed = 150
+	speed = initial_speed
 	max_health = initial_max_health
 	regeneration = initial_regeneration
 

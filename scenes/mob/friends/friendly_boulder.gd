@@ -1,11 +1,13 @@
 extends "res://scenes/mob/friends/friend.gd"
 
-func _init():	
+func _ready():	
 	super()
 	max_health = 300
 	health = max_health
 	damage = 45
-	speed = 350
+	initial_speed = 350
+	@warning_ignore("integer_division")
+	speed = int(initial_speed / 2)
 	attack_speed = 3.5
 	regeneration = 2
 

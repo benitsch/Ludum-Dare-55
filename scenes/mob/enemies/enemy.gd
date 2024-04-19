@@ -2,7 +2,7 @@ extends "res://scenes/mob/mob.gd"
 
 class_name Enemy
 
-func _init():
+func _ready():
 	super()
 
 func _physics_process(delta):

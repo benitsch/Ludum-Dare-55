@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4lt0b8vnqsgo"]
+[gd_scene load_steps=8 format=3 uid="uid://d4lt0b8vnqsgo"]
 
 [ext_resource type="Script" path="res://scenes/mob/mob.gd" id="1_2atju"]
 [ext_resource type="Texture2D" uid="uid://i1ov7omskph6" path="res://assets/sprites/Circle.png" id="2_nretx"]
@@ -11,9 +11,46 @@ radius = 19.0
 resource_local_to_scene = true
 radius = 26.0
 
+[sub_resource type="Animation" id="Animation_nosro"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dbgbw"]
+resource_name = "takeing_dmg"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(0.5, 1e-05, 0.5, 1e-05, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y3ykg"]
+_data = {
+"RESET": SubResource("Animation_nosro"),
+"takeing_dmg": SubResource("Animation_dbgbw")
+}
+
 [node name="Mob" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 47
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_2atju")
 
 [node name="GroundIndicator" type="Sprite2D" parent="."]
@@ -24,8 +61,13 @@ texture = ExtResource("2_nretx")
 shape = SubResource("CircleShape2D_8vkfs")
 
 [node name="AttackArea" type="Area2D" parent="."]
-collision_layer = 18
-collision_mask = 18
+collision_layer = 0
+collision_mask = 0
 
 [node name="AttackCollider" type="CollisionShape2D" parent="AttackArea"]
 shape = SubResource("CircleShape2D_gjslc")
+
+[node name="TakeDmgAnim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_y3ykg")
+}

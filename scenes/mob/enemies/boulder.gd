@@ -1,10 +1,12 @@
 extends "res://scenes/mob/enemies/enemy.gd"
 
-func _init():
+func _ready():
 	super()
 	health = 250
 	damage = 40
-	speed = 300
+	initial_speed = 300
+	@warning_ignore("integer_division")
+	speed = int(initial_speed / 2)
 	attack_speed = 4.0
 
 func _process(_delta):
