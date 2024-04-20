@@ -8,6 +8,7 @@ var health: int
 var health_bar = null
 var is_alive: bool = true
 var distance_dmg_timeout: float = 0
+var deadzone:= 0.2
 
 signal shoot
 
@@ -33,6 +34,12 @@ func get_input():
 		"move_right",
 		"move_up",
 		"move_down").normalized()
+		
+	var aim_direction: Vector2 = Input.get_vector(
+		"controller_aim_left",
+		"controller_aim_right",
+		"controller_aim_up",
+		"controller_aim_down").normalized()
 
 	if direction != Vector2.ZERO:
 		if direction.x == 0:  # Vertikale Bewegung (nach oben oder unten)
@@ -69,6 +76,11 @@ func get_input():
 	# Mouse input
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		shoot.emit()
+	# Controller shot input
+	elif  aim_direction.x != 0 or aim_direction.y != 0:
+		shoot.emit(aim_direction);
+		print("controller shoot")
+		
 
 func check_hitbox():
 	var overlapping_enemies = %HitBox.get_overlapping_bodies()
