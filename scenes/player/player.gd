@@ -87,6 +87,7 @@ func check_hitbox():
 		speed = initial_speed
 
 func receive_damage(dmg):
+	$AnimationPlayer.play("player_dmg")
 	if not is_alive:
 		return
 	
